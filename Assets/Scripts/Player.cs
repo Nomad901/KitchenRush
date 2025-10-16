@@ -5,16 +5,14 @@ using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Mono.Cecil;
+using NUnit.Framework.Interfaces;
 
 public class Player : MonoBehaviour
 {
     [System.Obsolete]
     private void Start()
     {
-        mKeyboard = Keyboard.current;
-        mCharPos = Vector3.zero;
         mIsWalking = false;
-
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 144;
 
@@ -23,30 +21,17 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        mCharPos = Vector3.zero;
+        Vector2 inputVec = mGameInput.getMovementVector(true);
 
-        if (mKeyboard != null)
+        Vector3 moveDir = new Vector3(inputVec.x, 0.0f, inputVec.y);
+        transform.position += moveDir * mMoveSpeed * Time.deltaTime;
+
+        mIsWalking = inputVec != Vector2.zero;
+        if (mIsWalking)
         {
-            if (mKeyboard.wKey.isPressed)
-                mCharPos.z = 1.0f;
-            if (mKeyboard.sKey.isPressed)
-                mCharPos.z = -1.0f;
-            if (mKeyboard.aKey.isPressed)
-                mCharPos.x = -1.0f;
-            if (mKeyboard.dKey.isPressed)
-                mCharPos.x = 1.0f;
+            float rotateSpeed = 5.0f;
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
         }
-    
-        if (mCharPos != Vector3.zero)
-        {
-            mIsWalking = true;
-            mCharPos.Normalize();
-            float factorRotation = 10.0f;
-            transform.forward = Vector3.Slerp(transform.forward, mCharPos, Time.deltaTime * factorRotation);
-            transform.position += mCharPos * mMoveSpeed * Time.deltaTime;
-        }
-        else
-            mIsWalking = false;
     }
     public bool isWalking()
     {
@@ -56,11 +41,10 @@ public class Player : MonoBehaviour
     // variables
     // ---------
     [SerializeField]
-    private float mMoveSpeed = 1.0f;
+    private float mMoveSpeed = 5.0f;
+    [SerializeField]
+    private GameInput mGameInput;
 
     private bool mIsWalking;
-
-    private Vector3 mCharPos;
-    private Keyboard mKeyboard;
     // ---------
 }
