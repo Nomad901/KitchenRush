@@ -24,7 +24,14 @@ public class Player : MonoBehaviour
         Vector2 inputVec = mGameInput.getMovementVector(true);
 
         Vector3 moveDir = new Vector3(inputVec.x, 0.0f, inputVec.y);
-        transform.position += moveDir * mMoveSpeed * Time.deltaTime;
+
+        float moveDistance = mMoveSpeed * Time.deltaTime;
+        float playerSize = 0.7f;
+        float playerHeight = 2.0f;
+
+        bool canMove = !Physics.CapsuleCast(transform.forward, transform.position + Vector3.up * playerHeight, playerSize, moveDir, moveDistance);
+        if(canMove)
+            transform.position += moveDir * moveDistance;
 
         mIsWalking = inputVec != Vector2.zero;
         if (mIsWalking)
