@@ -6,11 +6,18 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Mono.Cecil;
 using NUnit.Framework.Interfaces;
+using System;
 
 public class Player : MonoBehaviour
 {
     // private
     // -------
+    private void Awake()
+    {
+        if (Instance != null)
+            Debug.LogError("There is more than one instance of singleton!");
+        Instance = this;
+    }
     [System.Obsolete]
     private void Start()
     {
@@ -20,7 +27,16 @@ public class Player : MonoBehaviour
 
         Physics.autoSimulation = true;
         Physics.autoSyncTransforms = false;
+
+        mGameInput.mOnInteract += MGameInput_mOnInteract;
     }
+
+    private void MGameInput_mOnInteract(object sender, System.EventArgs e)
+    {
+        if (mSelectedClearCounter != null)
+            mSelectedClearCounter.interact();
+    }
+
     private void Update()
     {
         handleMovement();
@@ -38,7 +54,19 @@ public class Player : MonoBehaviour
             mLastInteraction = moveDir;
 
         float distanceInteraction = 2.0f;
-        bool hasInteraction = Physics.Raycast(transform.position, mLastInteraction, out RaycastHit outRaycastHitInfo, distanceInteraction);
+        bool hasInteraction = Physics.Raycast(transform.position, mLastInteraction, out RaycastHit outRaycastHitInfo, distanceInteraction, mLayerMasks);
+        if (hasInteraction)
+        {
+            if (outRaycastHitInfo.transform.TryGetComponent(out ClearCounter outClearCounter))
+            {
+                if (outClearCounter != mSelectedClearCounter)
+                    setSelectedCounter(outClearCounter);
+            }
+            else
+                setSelectedCounter(null);
+        }
+        else
+            setSelectedCounter(null);
     }
 
     // Movement
@@ -88,6 +116,12 @@ public class Player : MonoBehaviour
 
         return canMove;
     }
+    private void setSelectedCounter(ClearCounter pSelectedCounter)
+    {
+        mSelectedClearCounter = pSelectedCounter;
+
+        mOnSelectedCounter?.Invoke(this, new OnSelectedCounterEventArgs { mSelectedCounter = pSelectedCounter });
+    }
     // -------
 
     // public
@@ -96,16 +130,27 @@ public class Player : MonoBehaviour
     {
         return mIsWalking;
     }
+    public class OnSelectedCounterEventArgs : EventArgs
+    {
+        public ClearCounter mSelectedCounter;
+    }
     // ------
 
     // variables
     // ---------
+    // public
+    public event EventHandler<OnSelectedCounterEventArgs> mOnSelectedCounter;
+    public static Player Instance { get; private set; }
+    // private
     [SerializeField]
     private float mMoveSpeed = 5.0f;
     [SerializeField]
     private GameInput mGameInput;
-    private Vector3 mLastInteraction;
+    [SerializeField]
+    private LayerMask mLayerMasks;
 
+    private ClearCounter mSelectedClearCounter;
+    private Vector3 mLastInteraction;
     private bool mIsWalking;
     // ---------
 }
