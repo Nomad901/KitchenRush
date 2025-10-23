@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
         if (moveDir != Vector3.zero)
             mLastInteraction = moveDir;
-
+        
         float distanceInteraction = 2.0f;
         bool hasInteraction = Physics.Raycast(transform.position, mLastInteraction, out RaycastHit outRaycastHitInfo, distanceInteraction, mLayerMasks);
         if (hasInteraction)
@@ -88,8 +88,7 @@ public class Player : MonoBehaviour
         if (mIsWalking)
         {
             float rotateSpeed = 10.0f;
-            Quaternion targetRotation = Quaternion.LookRotation(pMoveDir);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
+            transform.forward = Vector3.Slerp(transform.forward, pMoveDir, Time.deltaTime * rotateSpeed);
         }
     }
     private bool handleCollision(ref Vector3 pMoveDir)
@@ -118,7 +117,7 @@ public class Player : MonoBehaviour
     }
     private void setSelectedCounter(ClearCounter pSelectedCounter)
     {
-        mSelectedClearCounter = pSelectedCounter;
+        this.mSelectedClearCounter = pSelectedCounter;
 
         mOnSelectedCounter?.Invoke(this, new OnSelectedCounterEventArgs { mSelectedCounter = pSelectedCounter });
     }
