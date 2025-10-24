@@ -9,9 +9,6 @@ public class Select : MonoBehaviour
 
     private void Player_mOnSelectedCounter(object sender, Player.OnSelectedCounterEventArgs events)
     {
-        Debug.Log($"First: {events.mSelectedCounter?.name}");
-        Debug.Log($"Second: {mClearCounter?.name}");
-        // todo: when i check the right box - it just doesnt work and it shows select2. just look at the console while working!
         if (events.mSelectedCounter == mClearCounter)
             Show();
         else
