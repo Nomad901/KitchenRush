@@ -3,31 +3,42 @@ using UnityEngine;
 
 public class KitchenObject : MonoBehaviour
 {
+    public void setKitchenObject(IKitchenObjectParent pIKitchenObjectParent)
+    {
+        if (mIKitchenObjectParent != null)
+            mIKitchenObjectParent.clearKitchenObject();
+
+        mIKitchenObjectParent = pIKitchenObjectParent;
+
+        if (pIKitchenObjectParent.hasKitchenObject())
+            Debug.LogError("The clear counter has an object!");
+        pIKitchenObjectParent.setKitchenObject(this);
+                
+        transform.parent = mIKitchenObjectParent.getKitchenObjTransform();
+        transform.localPosition = Vector3.zero;
+        //float rangeOfSpawning = 0.3f;
+        //float offsetX = Random.Range(-rangeOfSpawning, rangeOfSpawning);
+        //float offsetZ = Random.Range(-rangeOfSpawning, rangeOfSpawning);
+        //
+        //Vector3 randomOffset = new Vector3(offsetX,
+        //                                   0.0f,
+        //                                   offsetZ);
+        //transform.localPosition = randomOffset;
+        //
+        //float rotationLevel = Random.Range(0.0f, 360.0f);
+        //transform.GetChild(0).Rotate(0.0f, rotationLevel, 0.0f);
+    }
     public KitchenScriptObject getKitchenScriptObject()
     {
         return mKitchenScriptObject;
     }
-    public ClearCounter getClearCounter()
+    public IKitchenObjectParent getIKitchenObjectParent()
     {
-        return mClearCounter;
-    }
-    public void setClearCounter(ClearCounter pClearCounter)
-    {
-        if (mClearCounter != null)
-            mClearCounter.clearKitchenObject();
-
-        mClearCounter = pClearCounter;
-
-        //if (pClearCounter.hasKitchenObject())
-        //    Debug.LogError("Clear counter has a kitchen object!");
-        pClearCounter.setKitchenObject(this);
-                
-        transform.parent = mClearCounter.getKitchenObjTransform();
-        transform.localPosition = Vector3.zero;
+        return mIKitchenObjectParent;
     }
     
 
     [SerializeField]
     private KitchenScriptObject mKitchenScriptObject;
-    private ClearCounter mClearCounter;
+    private IKitchenObjectParent mIKitchenObjectParent;
 }
