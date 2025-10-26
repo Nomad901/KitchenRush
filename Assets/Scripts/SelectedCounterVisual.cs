@@ -9,7 +9,7 @@ public class Select : MonoBehaviour
 
     private void Player_mOnSelectedCounter(object sender, Player.OnSelectedCounterEventArgs events)
     {
-        if (events.mBaseCounter == mClearCounter)
+        if (events.mBaseCounter == mBaseCounter)
             Show();
         else
             Hide();
@@ -17,15 +17,21 @@ public class Select : MonoBehaviour
 
     private void Show()
     {
-        mVisualGameObject.SetActive(true);
+        foreach (var gameObject in mVisualGameObjects)
+        {
+            gameObject.SetActive(true);
+        }
     }
     private void Hide()
     {
-        mVisualGameObject.SetActive(false);
+        foreach (var gameObject in mVisualGameObjects)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     [SerializeField]
-    private ClearCounter mClearCounter;
+    private BaseCounter mBaseCounter;
     [SerializeField]
-    private GameObject mVisualGameObject;
+    private GameObject[] mVisualGameObjects;
 }

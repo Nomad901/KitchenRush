@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class KitchenObject : MonoBehaviour
 {
-    public void setKitchenObject(IKitchenObjectParent pIKitchenObjectParent)
+    public void setKitchenObjectParent(IKitchenObjectParent pIKitchenObjectParent)
     {
         if (mIKitchenObjectParent != null)
             mIKitchenObjectParent.clearKitchenObject();
@@ -25,7 +25,6 @@ public class KitchenObject : MonoBehaviour
     {
         return mIKitchenObjectParent;
     }
-    
 
     [SerializeField]
     private KitchenScriptObject mKitchenScriptObject;

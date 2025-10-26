@@ -3,45 +3,24 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class ClearCounter : BaseCounter, IKitchenObjectParent
+public class ClearCounter : BaseCounter
 {
     public override void interact(Player pPlayer)
     {
-        if (mKitchenObject == null)
+        if(!hasKitchenObject())
         {
-            Transform kitchenObjectTransform = Instantiate(mKitchenScriptObject.mPrefab, mDefaultTopPoint);
-            kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObject(this);
+            if (pPlayer.hasKitchenObject())
+            {
+                pPlayer.getKitchenObject().setKitchenObjectParent(this);
+            }
         }
         else
         {
-            mKitchenObject.setKitchenObject(pPlayer);
+            if(!pPlayer.hasKitchenObject())
+                getKitchenObject().setKitchenObjectParent(pPlayer);            
         }
-    }
-    public Transform getKitchenObjTransform()
-    {
-        return mDefaultTopPoint;
-    }
-    public void setKitchenObject(KitchenObject pKitchenObject)
-    {
-        mKitchenObject = pKitchenObject;
-    }
-    public KitchenObject getKitchenObject()
-    {
-        return mKitchenObject;
-    }
-    public void clearKitchenObject()
-    {
-        mKitchenObject = null;
-    }
-    public bool hasKitchenObject()
-    {
-        return mKitchenObject != null;
     }
 
     [SerializeField] 
     private KitchenScriptObject mKitchenScriptObject;
-    [SerializeField]
-    private Transform mDefaultTopPoint;
-
-    private KitchenObject mKitchenObject;
 }

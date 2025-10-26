@@ -1,44 +1,21 @@
+using System;
 using UnityEngine;
 
-public class ContainerCounter : BaseCounter, IKitchenObjectParent
+public class ContainerCounter : BaseCounter
 {
     public override void interact(Player pPlayer)
     {
-        if (mKitchenObject == null)
+        if (!pPlayer.hasKitchenObject())
         {
-            Transform kitchenObjectTransform = Instantiate(mKitchenScriptObject.mPrefab, mDefaultTopPoint);
-            kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObject(this);
+            Transform kitchenObjectTransform = Instantiate(mKitchenScriptObject.mPrefab);
+            kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObjectParent(pPlayer);
+
+            mOnGrabbedKitchenObject?.Invoke(this, EventArgs.Empty);
         }
-        else
-        {
-            mKitchenObject.setKitchenObject(pPlayer);
-        }
-    }
-    public Transform getKitchenObjTransform()
-    {
-        return mDefaultTopPoint;
-    }
-    public void setKitchenObject(KitchenObject pKitchenObject)
-    {
-        mKitchenObject = pKitchenObject;
-    }
-    public KitchenObject getKitchenObject()
-    {
-        return mKitchenObject;
-    }
-    public void clearKitchenObject()
-    {
-        mKitchenObject = null;
-    }
-    public bool hasKitchenObject()
-    {
-        return mKitchenObject != null;
     }
 
     [SerializeField]
     private KitchenScriptObject mKitchenScriptObject;
-    [SerializeField]
-    private Transform mDefaultTopPoint;
 
-    private KitchenObject mKitchenObject;
+    public event EventHandler mOnGrabbedKitchenObject;
 }
