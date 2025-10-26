@@ -9,7 +9,7 @@ public class Select : MonoBehaviour
 
     private void Player_mOnSelectedCounter(object sender, Player.OnSelectedCounterEventArgs events)
     {
-        if (events.mSelectedCounter == mClearCounter)
+        if (events.mBaseCounter == mClearCounter)
             Show();
         else
             Hide();

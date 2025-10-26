@@ -16,17 +16,6 @@ public class KitchenObject : MonoBehaviour
                 
         transform.parent = mIKitchenObjectParent.getKitchenObjTransform();
         transform.localPosition = Vector3.zero;
-        //float rangeOfSpawning = 0.3f;
-        //float offsetX = Random.Range(-rangeOfSpawning, rangeOfSpawning);
-        //float offsetZ = Random.Range(-rangeOfSpawning, rangeOfSpawning);
-        //
-        //Vector3 randomOffset = new Vector3(offsetX,
-        //                                   0.0f,
-        //                                   offsetZ);
-        //transform.localPosition = randomOffset;
-        //
-        //float rotationLevel = Random.Range(0.0f, 360.0f);
-        //transform.GetChild(0).Rotate(0.0f, rotationLevel, 0.0f);
     }
     public KitchenScriptObject getKitchenScriptObject()
     {

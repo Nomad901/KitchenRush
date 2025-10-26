@@ -8,7 +8,7 @@ using Mono.Cecil;
 using NUnit.Framework.Interfaces;
 using System;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKitchenObjectParent
 {
     // private
     // -------
@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
 
     private void MGameInput_mOnInteract(object sender, System.EventArgs e)
     {
-        if (mSelectedClearCounter != null)
-            mSelectedClearCounter.interact();
+        if (mBaseCounter != null)
+            mBaseCounter.interact(this);
     }
 
     private void Update()
@@ -57,10 +57,10 @@ public class Player : MonoBehaviour
         bool hasInteraction = Physics.Raycast(transform.position, mLastInteraction, out RaycastHit outRaycastHitInfo, distanceInteraction, mLayerMasks);
         if (hasInteraction)
         {
-            if (outRaycastHitInfo.transform.TryGetComponent(out ClearCounter outClearCounter))
+            if (outRaycastHitInfo.transform.TryGetComponent(out BaseCounter outBaseCounter))
             {
-                if (outClearCounter != mSelectedClearCounter)
-                    setSelectedCounter(outClearCounter);
+                if (outBaseCounter != mBaseCounter)
+                    setSelectedCounter(outBaseCounter);
             }
             else
                 setSelectedCounter(null);
@@ -115,11 +115,11 @@ public class Player : MonoBehaviour
 
         return canMove;
     }
-    private void setSelectedCounter(ClearCounter pSelectedCounter)
+    private void setSelectedCounter(BaseCounter pBaseCounter)
     {
-        this.mSelectedClearCounter = pSelectedCounter;
+        this.mBaseCounter = pBaseCounter;
 
-        mOnSelectedCounter?.Invoke(this, new OnSelectedCounterEventArgs { mSelectedCounter = pSelectedCounter });
+        mOnSelectedCounter?.Invoke(this, new OnSelectedCounterEventArgs { mBaseCounter = pBaseCounter });
     }
     // -------
 
@@ -131,7 +131,27 @@ public class Player : MonoBehaviour
     }
     public class OnSelectedCounterEventArgs : EventArgs
     {
-        public ClearCounter mSelectedCounter;
+        public BaseCounter mBaseCounter;
+    }
+    public Transform getKitchenObjTransform()
+    {
+        return mKitchenHoldPoint;
+    }
+    public void setKitchenObject(KitchenObject pKitchenObject)
+    {
+        mKitchenObject = pKitchenObject;
+    }
+    public KitchenObject getKitchenObject()
+    {
+        return mKitchenObject;
+    }
+    public void clearKitchenObject()
+    {
+        mKitchenObject = null;
+    }
+    public bool hasKitchenObject()
+    {
+        return mKitchenObject != null;
     }
     // ------
 
@@ -147,9 +167,13 @@ public class Player : MonoBehaviour
     private GameInput mGameInput;
     [SerializeField]
     private LayerMask mLayerMasks;
+    [SerializeField]
+    private Transform mKitchenHoldPoint;
 
-    private ClearCounter mSelectedClearCounter;
+    private BaseCounter mBaseCounter;
     private Vector3 mLastInteraction;
     private bool mIsWalking;
+
+    private KitchenObject mKitchenObject;
     // ---------
 }

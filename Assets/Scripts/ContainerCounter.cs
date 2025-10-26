@@ -1,9 +1,6 @@
-using System.Data;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
 
-public class ClearCounter : BaseCounter, IKitchenObjectParent
+public class ContainerCounter : BaseCounter, IKitchenObjectParent
 {
     public override void interact(Player pPlayer)
     {
@@ -38,7 +35,7 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
         return mKitchenObject != null;
     }
 
-    [SerializeField] 
+    [SerializeField]
     private KitchenScriptObject mKitchenScriptObject;
     [SerializeField]
     private Transform mDefaultTopPoint;
