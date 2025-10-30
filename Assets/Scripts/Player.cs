@@ -77,8 +77,11 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         Vector3 moveDir = new Vector3(inputVec.x, 0.0f, inputVec.y);
 
         bool canMove = handleCollision(ref moveDir);
+        Debug.Log(canMove);
         if (canMove)
+        {
             transform.position += moveDir * mMoveSpeed * Time.deltaTime;
+        }
 
         handleRotation(inputVec, moveDir);
     }
