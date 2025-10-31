@@ -8,7 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     }
     private void Update()
     {
-        mAnimator.SetBool(IS_WALKING, mPlayer.isWalking());
+        mAnimator.SetBool(IS_WALKING, mPlayer.getPlayerMovement().isWalking());
     }
 
     // variables

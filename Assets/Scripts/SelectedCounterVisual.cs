@@ -4,7 +4,7 @@ public class Select : MonoBehaviour
 {
     private void Start()
     {
-        Player.Instance.mOnSelectedCounter += Player_mOnSelectedCounter;
+        Player.Instance.getPlayerInteractions().mOnSelectedCounter += Player_mOnSelectedCounter;
     }
 
     private void Player_mOnSelectedCounter(object sender, Player.OnSelectedCounterEventArgs events)
