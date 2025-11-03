@@ -38,16 +38,19 @@ public class PlayerInteractions : MonoBehaviour
         else
             setSelectedCounter(null);
     }
-
+    public class OnSelectedCounterEventArgs : EventArgs
+    {
+        public BaseCounter mBaseCounter;
+    }
+    public GameInput getGameInput()
+    {
+        return mGameInput;
+    }
     private void setSelectedCounter(BaseCounter pBaseCounter)
     {
         this.mBaseCounter = pBaseCounter;
 
         mOnSelectedCounter?.Invoke(this, new OnSelectedCounterEventArgs { mBaseCounter = pBaseCounter });
-    }
-    public GameInput getGameInput()
-    {
-        return mGameInput;
     }
     
     public event EventHandler<OnSelectedCounterEventArgs> mOnSelectedCounter;

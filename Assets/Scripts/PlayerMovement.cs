@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     {
         mMoveSpeed = 5.0f;
         mIsWalking = false;
+        mCollisionSystem = GetComponent<CollisionSystem>();
     }
 
     public void handleMovement(GameInput gameInput)
@@ -14,13 +15,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 moveDir = new Vector3(inputVec.x, 0.0f, inputVec.y);
 
-        CollisionSystem collisions = new CollisionSystem();
-        bool canMove = collisions.handleCollisionPlayer(ref moveDir, mMoveSpeed);
-        Debug.Log(canMove);
+        bool canMove = mCollisionSystem.handleCollisionPlayer(ref moveDir, mMoveSpeed);
         if (canMove)
-        {
             transform.position += moveDir * mMoveSpeed * Time.deltaTime;
-        }
 
         handleRotation(inputVec, moveDir);
     }
@@ -42,5 +39,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float mMoveSpeed;
 
+    private CollisionSystem mCollisionSystem;
     private bool mIsWalking;
 }

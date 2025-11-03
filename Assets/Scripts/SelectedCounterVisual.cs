@@ -1,4 +1,5 @@
 using UnityEngine;
+using static PlayerInteractions;
 
 public class Select : MonoBehaviour
 {
@@ -6,15 +7,13 @@ public class Select : MonoBehaviour
     {
         Player.Instance.getPlayerInteractions().mOnSelectedCounter += Player_mOnSelectedCounter;
     }
-
-    private void Player_mOnSelectedCounter(object sender, Player.OnSelectedCounterEventArgs events)
+    private void Player_mOnSelectedCounter(object sender, PlayerInteractions.OnSelectedCounterEventArgs events)
     {
         if (events.mBaseCounter == mBaseCounter)
             Show();
         else
             Hide();
     }
-
     private void Show()
     {
         foreach (var gameObject in mVisualGameObjects)

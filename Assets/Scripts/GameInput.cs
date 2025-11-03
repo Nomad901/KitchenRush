@@ -26,7 +26,10 @@ public class GameInput : MonoBehaviour
 
         return inputVector;
     }
-
+    public PlayerInputActions getPlayerInputActions()
+    {
+        return mPlayerInputActions;
+    }
     private PlayerInputActions mPlayerInputActions;
 
     public event EventHandler mOnInteract;

@@ -15,6 +15,9 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         if (Instance != null)
             Debug.LogError("There is more than one instance of singleton!");
         Instance = this;
+
+        mPlayerInteractions = GetComponent<PlayerInteractions>();
+        mPlayerMovement = GetComponent<PlayerMovement>();
     }
     [System.Obsolete]
     private void Start()
@@ -24,9 +27,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
         Physics.autoSimulation = true;
         Physics.autoSyncTransforms = false;
-
-        mPlayerInteractions = new PlayerInteractions();
-        mPlayerMovement = new PlayerMovement();
     }
 
     private void Update()
@@ -44,10 +44,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         return mPlayerMovement;
     }
 
-    public class OnSelectedCounterEventArgs : EventArgs
-    {
-        public BaseCounter mBaseCounter;
-    }
     public Transform getKitchenObjTransform()
     {
         return mKitchenHoldPoint;
