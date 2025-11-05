@@ -1,5 +1,10 @@
+using Mono.Cecil.Cil;
+using System.Collections;
+using Unity.Hierarchy;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -14,22 +19,24 @@ public class PlayerAnimator : MonoBehaviour
     }
     public void checkAnimation(GameInput pGameInput)
     {
-        if(pGameInput.getPlayerInputActions().Player.Interact.activeControl?.name == "e")
+        if(mPlayer.getPlayerMovement().isWalking())
         {
-            changeAnimation("takeObject");
-        }
-        else if(mPlayer.getPlayerMovement().isWalking())
-        {
-            changeAnimation("Walk");
+            if (mPlayer.hasKitchenObject())
+                changeAnimation("MoveKeepingObject");
+            else 
+                changeAnimation("Walk");
         }
         else
         {
-            changeAnimation("Idle");
+            if (mPlayer.hasKitchenObject())
+                changeAnimation("IdleKeepingObject");
+            else 
+                changeAnimation("Idle");
         }
     }
-    public void changeAnimation(string pNameOfAnimation, float pCrossFade = 0.2f)
+    public void changeAnimation(string pNameOfAnimation, float pCrossFade = 0.2f, float pTime = 0.0f)
     {
-        if(mCurrentAnimation != pNameOfAnimation)
+        if (mCurrentAnimation != pNameOfAnimation)
         {
             mCurrentAnimation = pNameOfAnimation;
             mAnimator.CrossFade(pNameOfAnimation, pCrossFade);
