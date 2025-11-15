@@ -7,7 +7,15 @@ public class PlayerInteractions : MonoBehaviour
     private void Start()
     {
         mGameInput.mOnInteract += MGameInput_mOnInteract;
+        mGameInput.mOnInteractAlternate += MGameInput_mOnInteractAlternate;
     }
+
+    private void MGameInput_mOnInteractAlternate(object sender, EventArgs e)
+    {
+        if (mBaseCounter != null)
+            mBaseCounter.interactAlternate(Player.Instance);
+    }
+
     private void MGameInput_mOnInteract(object sender, System.EventArgs e)
     {
         if (mBaseCounter != null)

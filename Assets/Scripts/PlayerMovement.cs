@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
         mMoveSpeed = 5.0f;
         mIsWalking = false;
         mCollisionSystem = GetComponent<CollisionSystem>();
+
+        mTransform = transform;
     }
 
     public void handleMovement(GameInput gameInput)
@@ -17,18 +19,21 @@ public class PlayerMovement : MonoBehaviour
 
         bool canMove = mCollisionSystem.handleCollisionPlayer(ref moveDir, mMoveSpeed);
         if (canMove)
-            transform.position += moveDir * mMoveSpeed * Time.deltaTime;
+            mTransform.position += moveDir * mMoveSpeed * Time.deltaTime;
 
         handleRotation(inputVec, moveDir);
     }
     private void handleRotation(Vector2 pInputVec, Vector3 pMoveDir)
     {
         mIsWalking = pInputVec != Vector2.zero;
-        if (mIsWalking)
-        {
-            float rotateSpeed = 10.0f;
-            transform.forward = Vector3.Slerp(transform.forward, pMoveDir, Time.deltaTime * rotateSpeed);
-        }
+
+        if (!mIsWalking || pMoveDir.sqrMagnitude < 0.001f)
+            return;
+
+        float rotateSpeed = 10.0f;
+
+        Quaternion targetRotation = Quaternion.LookRotation(pMoveDir);
+        mTransform.rotation = Quaternion.Lerp(mTransform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
     }
 
     public bool isWalking()
@@ -40,5 +45,6 @@ public class PlayerMovement : MonoBehaviour
     private float mMoveSpeed;
 
     private CollisionSystem mCollisionSystem;
+    private Transform mTransform;
     private bool mIsWalking;
 }

@@ -10,9 +10,7 @@ public class ClearCounter : BaseCounter
         if(!hasKitchenObject())
         {
             if (pPlayer.hasKitchenObject())
-            {
                 pPlayer.getKitchenObject().setKitchenObjectParent(this);
-            }
         }
         else
         {

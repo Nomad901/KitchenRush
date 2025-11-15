@@ -24,9 +24,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 144;
-
-        Physics.autoSimulation = true;
-        Physics.autoSyncTransforms = false;
     }
 
     private void Update()

@@ -3,10 +3,10 @@ using UnityEngine;
 public class BaseCounter : MonoBehaviour, IKitchenObjectParent
 {
     public virtual void interact(Player pPlayer)
-    {
-
-    }
-
+    {}
+    public virtual void interactAlternate(Player pPlayer)
+    {}
+    
     public Transform getKitchenObjTransform()
     {
         return mDefaultTopPoint;

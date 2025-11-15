@@ -7,9 +7,7 @@ public class ContainerCounter : BaseCounter
     {
         if (!pPlayer.hasKitchenObject())
         {
-            Transform kitchenObjectTransform = Instantiate(mKitchenScriptObject.mPrefab);
-            kitchenObjectTransform.GetComponent<KitchenObject>().setKitchenObjectParent(pPlayer);
-
+            KitchenObject.spawnKitchenObject(mKitchenScriptObject, pPlayer);
             mOnGrabbedKitchenObject?.Invoke(this, EventArgs.Empty);
         }
     }

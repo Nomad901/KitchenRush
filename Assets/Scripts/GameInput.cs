@@ -10,6 +10,12 @@ public class GameInput : MonoBehaviour
         mPlayerInputActions.Player.Enable();
 
         mPlayerInputActions.Player.Interact.performed += Interact_performed;
+        mPlayerInputActions.Player.InteractAlternate.performed += InteractAlternate_performed;
+    }
+
+    private void InteractAlternate_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        mOnInteractAlternate?.Invoke(this, EventArgs.Empty);
     }
 
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -33,4 +39,5 @@ public class GameInput : MonoBehaviour
     private PlayerInputActions mPlayerInputActions;
 
     public event EventHandler mOnInteract;
+    public event EventHandler mOnInteractAlternate;
 }
