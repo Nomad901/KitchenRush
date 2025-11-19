@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -9,18 +10,39 @@ public class CutCounter : BaseCounter
     private void Start()
     {
         mKitchenObjectNames = new string[(Int32)KitchenObjectType.NUM_OF_OBJECTS] { "Tomato", "Cheese", "Cabbage", "Error" };
+        mNumberOfSlices = new Int32[(Int32)KitchenObjectType.NUM_OF_OBJECTS]      {        3,         3,        5,       0 };
     }
     public override void interact(Player pPlayer)
     {
         if (!hasKitchenObject())
         {
             if (pPlayer.hasKitchenObject())
+            {
+                mCurrentSliceNumber = 0;
+                
+                string kitchenObjectName = manageString(pPlayer.getKitchenObject()?.name);
+                manageKitchenObjectType(kitchenObjectName);
+                if(mKitchenObjectType != KitchenObjectType.ERROR)
+                {
+                    mOnBarChanged?.Invoke(this, new OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = (float)mCurrentSliceNumber / mNumberOfSlices[(Int32)mKitchenObjectType]
+                    });
+                }
+
                 pPlayer.getKitchenObject().setKitchenObjectParent(this);
+            }
         }
         else
         {
             if (!pPlayer.hasKitchenObject())
+            {
                 getKitchenObject().setKitchenObjectParent(pPlayer);
+                mOnBarChanged?.Invoke(this, new OnProgressChangedEventArgs
+                {
+                    mProgressFloat = 0.0f
+                });
+            }
         }
     }
 
@@ -32,26 +54,40 @@ public class CutCounter : BaseCounter
             manageKitchenObjectType(kitchenObjectName);
             if (mKitchenObjectType == KitchenObjectType.ERROR)
                 return;
-
-            getKitchenObject().destroySelf();
-
-            UInt32 indexKitchenScriptObjects = 0;
-            switch (mKitchenObjectType)
+            else
             {
-                case KitchenObjectType.TOMATO:
-                    indexKitchenScriptObjects = 0;
-                    break;
-                case KitchenObjectType.CHEESE:
-                    indexKitchenScriptObjects = 1;
-                    break;
-                case KitchenObjectType.CABBAGE:
-                    indexKitchenScriptObjects = 2;
-                    break;
-                default:
-                    break;
+                mCurrentSliceNumber++;
+
+                mOnCut?.Invoke(this, EventArgs.Empty);
+
+                mOnBarChanged?.Invoke(this, new OnProgressChangedEventArgs
+                {
+                    mProgressFloat = (float)mCurrentSliceNumber / mNumberOfSlices[(Int32)mKitchenObjectType]
+                });
             }
 
-            KitchenObject.spawnKitchenObject(mKitchenScriptObject[indexKitchenScriptObjects], this);
+            if (mCurrentSliceNumber == mNumberOfSlices[(Int32)mKitchenObjectType])
+            {
+                getKitchenObject().destroySelf();
+
+                UInt32 indexKitchenScriptObjects = 0;
+                switch (mKitchenObjectType)
+                {
+                    case KitchenObjectType.TOMATO:
+                        indexKitchenScriptObjects = 0;
+                        break;
+                    case KitchenObjectType.CHEESE:
+                        indexKitchenScriptObjects = 1;
+                        break;
+                    case KitchenObjectType.CABBAGE:
+                        indexKitchenScriptObjects = 2;
+                        break;
+                    default:
+                        break;
+                }
+
+                KitchenObject.spawnKitchenObject(mKitchenScriptObject[indexKitchenScriptObjects], this);
+            }
         }
     }
 
@@ -92,5 +128,16 @@ public class CutCounter : BaseCounter
         NUM_OF_OBJECTS = 4
     };
     private string[] mKitchenObjectNames;
+    private Int32[] mNumberOfSlices;
+    private Int32 mCurrentSliceNumber;
+
     private KitchenObjectType mKitchenObjectType;
+
+    public event EventHandler<OnProgressChangedEventArgs> mOnBarChanged;
+    public class OnProgressChangedEventArgs : EventArgs
+    {
+        public float mProgressFloat;
+    }
+
+    public event EventHandler mOnCut;
 }
