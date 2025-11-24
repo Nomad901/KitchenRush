@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8577c306a60ca4849825109a86f78bc9, type: 3}
+  m_Name: KitchenScriptObject_TomatoSlices
+  m_EditorClassIdentifier: Assembly-CSharp::KitchenScritpObject
+  mPrefab: {fileID: 4016499045778468728, guid: a5a79cd969422d147b16441e0b635daf, type: 3}
+  mSprite: {fileID: 21300000, guid: c9f08c3c1ae2a364aaeaa3712540b1d4, type: 3}
+  mName: TomatoSlices
