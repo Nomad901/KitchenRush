@@ -14,55 +14,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1760511083
+  lastShownTimestamp: 1764320590
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1760511083
+  checkedLastUpdateTimestamp: 1764320590
   lastQOTDResponse:
-    questionId: 231
-    questionText: 'What is the possible error in this code:
+    questionId: 246
+    questionText: 'When would this code cause an error?
 
-      <p>tickTimer +=
-      Time.deltaTime;</p>
+      <p>Building closest
+      = null;</p>
 
-      <p>if (tickTimer &gt;= TICK_TIMER_MAX) {</p>
-
-      <p>&nbsp;
-      &nbsp; tickTimer -= TICK_TIMER_MAX;</p>
-
-      <p>&nbsp; &nbsp; tick++;</p>
+      <p>for (int i = 0; i &lt; instanceList.Count; i++) {</p>
 
       <p>&nbsp;
-      &nbsp; OnTickEvent(this, EventArgs.Empty);</p>
+      &nbsp; if (Vector3.Distance(position, instanceList[i].GetPosition()) &lt; Vector3.Distance(position,
+      closest.GetPosition())) {</p>
 
-      <p>}</p>'
-    answerA: None
-    answerB: NullReferenceException
-    answerC: 2 ticks at once
+      <p>&nbsp; &nbsp; &nbsp; &nbsp; closest
+      = instanceList[i];</p>
+
+      <p>&nbsp; &nbsp; }</p>
+
+      <p>}</p>
+
+      <p>return
+      closest;</p>'
+    answerA: When instanceList is empty
+    answerB: When instanceList has at least one element
+    answerC: When instanceList has exactly two elements
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1760511083
+  lastQotdTimestamp: 1764320590
   lastDynamicHeaderResponse:
-    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/chrisZJun24_LastCall.png
-    topText: Learn how to get more WISHLISTS and Sell more COPIES of your Games!
-    topLink: howtomarketagame
-    bottomText: DONT MISS the latest important trends, sign up for my FREE Weekly
-      Newsletter!
-    bottomLink: gamedevreport
-  lastDynamicHeaderTimestamp: 1760511083
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/cmBlackFriday2025.png
+    topText: Get my BLACK FRIDAY Bundle! Available now with Live Chat!
+    topLink: blackfriday
+    bottomText: My 10+ Years of C# Knowledge in 1 Course!
+    bottomLink: csharpcourse
+  lastDynamicHeaderTimestamp: 1764320590
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1760511083
+  websiteLatestMessageTimestamp: 1764320590
   websiteLatestVideos:
     videos:
-    - youTubeId: bTQZU_CV9UY
-      title: TOP 10 FREE NEW Assets OCTOBER 2025!
-    - youTubeId: 6jjwMLflLOU
-      title: This AWESOME Tool MULTIPLIES all your assets!
-    - youTubeId: iTpoP8M6dxg
-      title: 8 QUICK Unity Tips to make BETTER Games!
-    - youTubeId: RBgFEaRn_jg
-      title: Is YouTube EASY MONEY compared to Game Dev?
-  websiteLatestVideosTimestamp: 1760511083
+    - youTubeId: UzddfPG2zr4
+      title: The FUTURE of Unity! (and Unity 7 is DEAD!)
+    - youTubeId: Z_R-gcTuMrI
+      title: TOP 10 NEW Games, Made with Unity! (OCTOBER 2025)
+    - youTubeId: yC6IGLB4ySg
+      title: Make Games FASTER (90% Compilation Speed BOOST!)
+    - youTubeId: 6JDErIMOUjM
+      title: Unity INSIDE Unreal Engine?! WHAT IS GOING ON?!
+  websiteLatestVideosTimestamp: 1764320590

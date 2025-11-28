@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using static CutCounter;
 
-public class StoveCounter : BaseCounter
+public class StoveCounter : BaseCounter, IHasProgress
 {
     private void Start()
     {
@@ -16,13 +16,18 @@ public class StoveCounter : BaseCounter
     {
         if(hasKitchenObject())
         {
-            switch(mFryingState)
+            switch (mFryingState)
             {
                 case fryingState.IDLE:
 
                     break;
                 case fryingState.FRYING:
                     mFryingTimer += Time.deltaTime;
+
+                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = (mFryingTimer / mFryingRecipeSO.mFryingTimerMax)
+                    });
 
                     if (mFryingTimer >= mFryingRecipeSO.mFryingTimerMax)
                     {
@@ -41,6 +46,11 @@ public class StoveCounter : BaseCounter
                 case fryingState.FRIED:
                     mBurningTimer += Time.deltaTime;
 
+                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = (mBurningTimer / mBurningRecipeSO.mBurningTimerMax)
+                    });
+
                     if (mBurningTimer >= mBurningRecipeSO.mBurningTimerMax)
                     {
                         mFryingState = fryingState.BURNED;
@@ -53,11 +63,22 @@ public class StoveCounter : BaseCounter
                 case fryingState.BURNED:
                     mBurningTimer = 0.0f;
 
+                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = 0.0f
+                    });
+
                     getKitchenObject().destroySelf();
                     KitchenObject.spawnKitchenObject(mBurningRecipeSO.mOutput, this);
-
                     break;
             }
+        }
+        else
+        {
+            mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+            {
+                mProgressFloat = 0.0f
+            });
         }
     }
 
@@ -129,6 +150,7 @@ public class StoveCounter : BaseCounter
 
     private float mFryingTimer;
     private float mBurningTimer;
+
     private FryingRecipeSO mFryingRecipeSO;
     private BurningRecipeSO mBurningRecipeSO;
 
@@ -147,4 +169,5 @@ public class StoveCounter : BaseCounter
         public fryingState mState;
     }
 
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> mOnBarChanged;
 }

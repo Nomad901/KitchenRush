@@ -6,17 +6,21 @@ public class ProgressBarUI : MonoBehaviour
 {
     private void Start()
     {
-        mCutCounter.mOnBarChanged += MCutCounter_mOnBarChanged;
+        mIHasProgress = mGameObjectForProgress.GetComponent<IHasProgress>();
+        if (mIHasProgress == null)
+            Debug.LogError("Object " + mIHasProgress + " is null!");
+
+        mIHasProgress.mOnBarChanged += MIHasProgress_mOnBarChanged;
 
         mBarImage.fillAmount = 0.0f;
-
+        
         hide();
     }
-
-    private void MCutCounter_mOnBarChanged(object sender, CutCounter.OnProgressChangedEventArgs e)
+    
+    private void MIHasProgress_mOnBarChanged(object sender, IHasProgress.OnProgressChangedEventArgs e)
     {
         mBarImage.fillAmount = e.mProgressFloat;
-        if (e.mProgressFloat == 0.0f || e.mProgressFloat == 0.0f)
+        if (e.mProgressFloat == 0.0f)
             hide();
         else
             show();
@@ -34,5 +38,7 @@ public class ProgressBarUI : MonoBehaviour
     [SerializeField]
     private Image mBarImage;
     [SerializeField]
-    private CutCounter mCutCounter;
+    private GameObject mGameObjectForProgress;
+
+    private IHasProgress mIHasProgress;
 }

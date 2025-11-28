@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Splines;
+using static IHasProgress;
 
-public class CutCounter : BaseCounter
+public class CutCounter : BaseCounter, IHasProgress
 {
     private void Start()
     {
@@ -131,13 +134,9 @@ public class CutCounter : BaseCounter
     private Int32[] mNumberOfSlices;
     private Int32 mCurrentSliceNumber;
 
-    private KitchenObjectType mKitchenObjectType;
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> mOnBarChanged;
 
-    public event EventHandler<OnProgressChangedEventArgs> mOnBarChanged;
-    public class OnProgressChangedEventArgs : EventArgs
-    {
-        public float mProgressFloat;
-    }
+    private KitchenObjectType mKitchenObjectType;
 
     public event EventHandler mOnCut;
 }
