@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\nomad\\KitchenGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\nomad\\kitchengame\\assets\\scripts\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,9 +44,9 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlateCounter.cs",
               "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\PlateCounter.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlateCounter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T10:04:53.597Z",
+              "WhenOpened": "2025-12-03T03:09:06.528Z",
               "EditorCaption": ""
             }
           ]

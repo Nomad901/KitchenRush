@@ -1,0 +1,173 @@
+using System;
+using UnityEditor;
+using UnityEngine;
+using static CutCounter;
+
+public class StoveCounter : BaseCounter, IHasProgress
+{
+    private void Start()
+    {
+        mFryingTimer = 0.0f;
+        mBurningTimer = 0.0f;
+        mFryingState = fryingState.IDLE;
+    }
+
+    private void Update()
+    {
+        if(hasKitchenObject())
+        {
+            switch (mFryingState)
+            {
+                case fryingState.IDLE:
+
+                    break;
+                case fryingState.FRYING:
+                    mFryingTimer += Time.deltaTime;
+
+                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = (mFryingTimer / mFryingRecipeSO.mFryingTimerMax)
+                    });
+
+                    if (mFryingTimer >= mFryingRecipeSO.mFryingTimerMax)
+                    {
+                        mFryingTimer = 0.0f;
+                        
+                        getKitchenObject().destroySelf();
+                        KitchenObject.spawnKitchenObject(mFryingRecipeSO.mOutput, this);
+
+                        mFryingState = fryingState.FRIED;
+                        mOnStateChange?.Invoke(this, new OnStateChangeArgs
+                        {
+                            mState = fryingState.FRIED
+                        });
+                    }
+                    break;
+                case fryingState.FRIED:
+                    mBurningTimer += Time.deltaTime;
+
+                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = (mBurningTimer / mBurningRecipeSO.mBurningTimerMax)
+                    });
+
+                    if (mBurningTimer >= mBurningRecipeSO.mBurningTimerMax)
+                    {
+                        mFryingState = fryingState.BURNED;
+                        mOnStateChange?.Invoke(this, new OnStateChangeArgs
+                        {
+                            mState = fryingState.BURNED
+                        });
+                    }
+                    break;
+                case fryingState.BURNED:
+                    mBurningTimer = 0.0f;
+
+                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = 0.0f
+                    });
+
+                    getKitchenObject().destroySelf();
+                    KitchenObject.spawnKitchenObject(mBurningRecipeSO.mOutput, this);
+                    break;
+            }
+        }
+        else
+        {
+            mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+            {
+                mProgressFloat = 0.0f
+            });
+        }
+    }
+
+    public override void interact(Player pPlayer)
+    {
+        if (!hasKitchenObject())
+        {
+            if (pPlayer.hasKitchenObject())
+            {
+                if(hasRecipeWithInput(pPlayer.getKitchenObject().getKitchenScriptObject()))
+                {
+                    pPlayer.getKitchenObject().setKitchenObjectParent(this);
+
+                    mFryingRecipeSO = getFryingRecipeSOWithInput(getKitchenObject().getKitchenScriptObject());
+                    mBurningRecipeSO = getBurningRecipeSOWithInput(mFryingRecipeSO.mOutput);
+
+                    mFryingState = fryingState.FRYING;
+                    mOnStateChange?.Invoke(this, new OnStateChangeArgs
+                    {
+                        mState = fryingState.FRYING
+                    });
+                    mFryingTimer = 0.0f;
+                    mBurningTimer = 0.0f;
+                }
+            }
+        }
+        else
+        {
+            if (!pPlayer.hasKitchenObject())
+            {
+                getKitchenObject().setKitchenObjectParent(pPlayer);
+                mFryingState = fryingState.IDLE;
+                mOnStateChange?.Invoke(this, new OnStateChangeArgs
+                {
+                    mState = fryingState.IDLE
+                });
+            }
+        }
+    }
+
+    private bool hasRecipeWithInput(KitchenScriptObject pInputKitchenScriptObject)
+    {
+        FryingRecipeSO fryingRecipeSO = getFryingRecipeSOWithInput(pInputKitchenScriptObject);
+        return fryingRecipeSO != null;
+    }
+    private FryingRecipeSO getFryingRecipeSOWithInput(KitchenScriptObject pInputScriptObject)
+    {
+        foreach (FryingRecipeSO fryingRecipeElement in mFryingRecipeSOArray)
+        {
+            if (fryingRecipeElement.mInput == pInputScriptObject)
+                return fryingRecipeElement;
+        }
+        return null;
+    }
+    private BurningRecipeSO getBurningRecipeSOWithInput(KitchenScriptObject pInputScriptObject)
+    {
+        foreach (BurningRecipeSO burningRecipeElement in mBurningRecipeSOArray)
+        {
+            if (burningRecipeElement.mInput == pInputScriptObject)
+                return burningRecipeElement;
+        }
+        return null;
+    }
+
+    [SerializeField]
+    private FryingRecipeSO[] mFryingRecipeSOArray;
+    [SerializeField]
+    private BurningRecipeSO[] mBurningRecipeSOArray;
+
+    private float mFryingTimer;
+    private float mBurningTimer;
+
+    private FryingRecipeSO mFryingRecipeSO;
+    private BurningRecipeSO mBurningRecipeSO;
+
+    public enum fryingState
+    {
+        IDLE = 0,
+        FRYING = 1,
+        FRIED = 2,
+        BURNED = 3
+    }
+    private fryingState mFryingState;
+
+    public event EventHandler<OnStateChangeArgs> mOnStateChange;
+    public class OnStateChangeArgs : EventArgs
+    {
+        public fryingState mState;
+    }
+
+    public event EventHandler<IHasProgress.OnProgressChangedEventArgs> mOnBarChanged;
+}
