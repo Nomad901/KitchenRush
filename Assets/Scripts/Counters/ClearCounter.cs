@@ -15,7 +15,16 @@ public class ClearCounter : BaseCounter
         else
         {
             if(!pPlayer.hasKitchenObject())
-                getKitchenObject().setKitchenObjectParent(pPlayer);            
+                getKitchenObject().setKitchenObjectParent(pPlayer);
+            else
+            {
+                if(pPlayer.getKitchenObject() is PlateKitchenObject)
+                {
+                    PlateKitchenObject plate = pPlayer.getKitchenObject() as PlateKitchenObject;
+                    if(plate.tryAddIngredient(pPlayer.getKitchenObject().getKitchenScriptObject()))
+                        getKitchenObject().destroySelf();
+                }
+            }
         }
     }
 

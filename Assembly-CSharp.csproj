@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\KitchenObjects\KitchenScriptObject.cs" />
     <Compile Include="Assets\Scripts\KitchenObjects\KitchenObject.cs" />
     <Compile Include="Assets\Scripts\Counters\BaseCounter.cs" />
+    <Compile Include="Assets\Scripts\KitchenObjects\PlateKitchenObject.cs" />
     <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
