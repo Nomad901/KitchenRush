@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nomad\\KitchenGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\nomad\\kitchengame\\assets\\scripts\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\counters\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\counters\\containercounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\containercounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,15 +42,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContainerCounter.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\ContainerCounter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\ContainerCounter.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\ContainerCounter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Counters\\ContainerCounter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T03:26:38.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "PlateCounter.cs",
-              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\PlateCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlateCounter.cs",
-              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\PlateCounter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlateCounter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T03:09:06.528Z",
+              "WhenOpened": "2025-12-03T03:18:56.446Z",
               "EditorCaption": ""
             }
           ]

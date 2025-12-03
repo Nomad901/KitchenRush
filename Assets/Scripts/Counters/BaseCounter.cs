@@ -11,6 +11,10 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     {
         return mDefaultTopPoint;
     }
+    public void setKitchenObjTransform(Transform pTransform)
+    {
+        mDefaultTopPoint = pTransform;
+    }
     public void setKitchenObject(KitchenObject pKitchenObject)
     {
         mKitchenObject = pKitchenObject;

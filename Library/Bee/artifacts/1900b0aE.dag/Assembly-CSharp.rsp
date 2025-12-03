@@ -453,6 +453,7 @@
 "Assets/Scripts/Counters/TrashCounter.cs"
 "Assets/Scripts/CounterVisuals/ContainerCounterVisual.cs"
 "Assets/Scripts/CounterVisuals/CuttingCounterVisual.cs"
+"Assets/Scripts/CounterVisuals/PlatesCounterVisual.cs"
 "Assets/Scripts/CounterVisuals/SelectedCounterVisual.cs"
 "Assets/Scripts/CounterVisuals/StoveCounterVisual.cs"
 "Assets/Scripts/KitchenObjects/IKitchenObjectParent.cs"

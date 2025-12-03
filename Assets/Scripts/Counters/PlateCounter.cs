@@ -1,35 +1,50 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class PlateCounter : BaseCounter
 {
-    private void Start()
-    {
-        for (UInt32 i = 0; i < MAX_AMOUNT_OF_PLATES; ++i)
-        {
-            mListOfPlates.Add(mPlateKitchenObjectSO);
-        }
-    }
     private void Update()
     {
-        
+        mCurrentTime += Time.deltaTime;
+        if (mCurrentTime >= TIME_OF_APPEARING &&
+            mCurrentAmountOfPlates < MAX_AMOUNT_OF_PLATES)
+        {
+            mCurrentTime = 0.0f;
+            if (mCurrentAmountOfPlates < MAX_AMOUNT_OF_PLATES)
+            {
+                mCurrentAmountOfPlates++;
+                mOnPlateSpawned?.Invoke(this, EventArgs.Empty);
+            }
+        }
     }
     public override void interact(Player pPlayer)
     { 
-        
-    }
-    public override void interactAlternate(Player pPlayer)
-    { 
-    
-    }
+        if (!pPlayer.hasKitchenObject())
+        {
+            if (mCurrentAmountOfPlates > 0)
+            {
+                mCurrentAmountOfPlates--;
 
+                KitchenObject.spawnKitchenObject(mPlateKitchenObjectSO, pPlayer);
+
+                mOnPlateRemoved?.Invoke(this, EventArgs.Empty);
+            }
+        }
+    }
 
     [SerializeField]
     private KitchenScriptObject mPlateKitchenObjectSO;
-    private List<KitchenScriptObject> mListOfPlates;
-
+    
     private const UInt32 MAX_AMOUNT_OF_PLATES = 5;
     private const UInt32 TIME_OF_APPEARING = 2;
+    private float mCurrentTime = 0.0f;
+    private UInt32 mCurrentAmountOfPlates = 0;
+
+    public EventHandler mOnPlateSpawned;
+    public EventHandler mOnPlateRemoved;
 }

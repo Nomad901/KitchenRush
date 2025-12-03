@@ -10,13 +10,14 @@ public class KitchenObject : MonoBehaviour
 
         mIKitchenObjectParent = pIKitchenObjectParent;
 
-        if (pIKitchenObjectParent.hasKitchenObject())
-            Debug.LogError("The clear counter has an object!");
+       if (pIKitchenObjectParent.hasKitchenObject())
+           Debug.LogError("The clear counter has an object!");
         pIKitchenObjectParent.setKitchenObject(this);
                 
         transform.parent = mIKitchenObjectParent.getKitchenObjTransform();
         transform.localPosition = Vector3.zero;
     }
+    
     public KitchenScriptObject getKitchenScriptObject()
     {
         return mKitchenScriptObject;
