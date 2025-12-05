@@ -14,15 +14,19 @@ public class ClearCounter : BaseCounter
         }
         else
         {
-            if(!pPlayer.hasKitchenObject())
+            if (!pPlayer.hasKitchenObject())
                 getKitchenObject().setKitchenObjectParent(pPlayer);
             else
             {
-                if(pPlayer.getKitchenObject() is PlateKitchenObject)
+                if (pPlayer.getKitchenObject().tryGetPlate(out PlateKitchenObject plate))
                 {
-                    PlateKitchenObject plate = pPlayer.getKitchenObject() as PlateKitchenObject;
                     if(plate.tryAddIngredient(getKitchenObject().getKitchenScriptObject()))
                         getKitchenObject().destroySelf();
+                }
+                else if (getKitchenObject().tryGetPlate(out PlateKitchenObject pPlateKitchenObject))
+                {
+                    if (pPlateKitchenObject.tryAddIngredient(pPlayer.getKitchenObject().getKitchenScriptObject()))
+                        pPlayer.getKitchenObject().destroySelf();
                 }
             }
         }

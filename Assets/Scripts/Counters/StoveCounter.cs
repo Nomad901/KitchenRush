@@ -116,6 +116,23 @@ public class StoveCounter : BaseCounter, IHasProgress
                     mState = fryingState.IDLE
                 });
             }
+            else
+            {
+                if (pPlayer.getKitchenObject().tryGetPlate(out PlateKitchenObject plate))
+                {
+                    if (plate.tryAddIngredient(getKitchenObject().getKitchenScriptObject()))
+                        getKitchenObject().destroySelf();
+                    mFryingState = fryingState.IDLE;
+                    mOnStateChange?.Invoke(this, new OnStateChangeArgs
+                    {
+                        mState = fryingState.IDLE
+                    });
+                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                    {
+                        mProgressFloat = 0.0f
+                    });
+                }
+            }
         }
     }
 

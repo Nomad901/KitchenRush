@@ -11,7 +11,6 @@ public class PlateKitchenObject : KitchenObject
 
     public bool tryAddIngredient(KitchenScriptObject pKitchenScriptObject)
     {
-        Debug.Log(pKitchenScriptObject.name);
         if (!mListAllowedKitchenObject.Contains(pKitchenScriptObject))
             return false;
         if (mListKitchenObjects.Contains(pKitchenScriptObject))

@@ -46,6 +46,14 @@ public class CutCounter : BaseCounter, IHasProgress
                     mProgressFloat = 0.0f
                 });
             }
+            else
+            {
+                if (pPlayer.getKitchenObject().tryGetPlate(out PlateKitchenObject plate))
+                {
+                    if (plate.tryAddIngredient(getKitchenObject().getKitchenScriptObject()))
+                        getKitchenObject().destroySelf();
+                }
+            }
         }
     }
 
