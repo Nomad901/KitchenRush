@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,13 @@ public class PlateKitchenObject : KitchenObject
             return false;
         if (mListKitchenObjects.Contains(pKitchenScriptObject))
             return false;
+
         mListKitchenObjects.Add(pKitchenScriptObject);
+        mOnKitchenObjectAdded?.Invoke(this, new KitchenObjectAddedEventArgs
+        {
+            mKitchenScriptObject = pKitchenScriptObject
+        });
+
         return true;
     }
 
@@ -23,4 +30,10 @@ public class PlateKitchenObject : KitchenObject
 
     [SerializeField]
     private List<KitchenScriptObject> mListAllowedKitchenObject;
+
+    public event EventHandler<KitchenObjectAddedEventArgs> mOnKitchenObjectAdded;
+    public class KitchenObjectAddedEventArgs : EventArgs
+    {
+        public KitchenScriptObject mKitchenScriptObject;
+    }
 }

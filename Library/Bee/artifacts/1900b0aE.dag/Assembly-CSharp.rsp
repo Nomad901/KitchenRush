@@ -459,6 +459,7 @@
 "Assets/Scripts/KitchenObjects/IKitchenObjectParent.cs"
 "Assets/Scripts/KitchenObjects/KitchenObject.cs"
 "Assets/Scripts/KitchenObjects/KitchenScriptObject.cs"
+"Assets/Scripts/KitchenObjects/PlateIngredientsCompleteVisual.cs"
 "Assets/Scripts/KitchenObjects/PlateKitchenObject.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerAnimator.cs"
