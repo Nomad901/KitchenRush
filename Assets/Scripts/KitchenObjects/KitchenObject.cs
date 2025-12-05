@@ -26,6 +26,10 @@ public class KitchenObject : MonoBehaviour
     {
         return mIKitchenObjectParent;
     }
+    public void setKitchenScriptObject(KitchenScriptObject pKitchenScriptObject)
+    {
+        mKitchenScriptObject = pKitchenScriptObject;
+    }
     public void destroySelf()
     {
         mIKitchenObjectParent.clearKitchenObject();
@@ -38,6 +42,7 @@ public class KitchenObject : MonoBehaviour
         Transform kitchenObjectTransform = Instantiate(pKitchenScriptObject.mPrefab);
         KitchenObject kitchenObject = kitchenObjectTransform.GetComponent<KitchenObject>();
         kitchenObject.setKitchenObjectParent(pIKitchenObjectParent);
+        kitchenObject.setKitchenScriptObject(pKitchenScriptObject);
         return kitchenObject;
     }
 

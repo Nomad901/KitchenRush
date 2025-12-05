@@ -69,7 +69,7 @@ public class CutCounter : BaseCounter, IHasProgress
                 });
             }
 
-            if (mCurrentSliceNumber == mNumberOfSlices[(Int32)mKitchenObjectType])
+            if (mCurrentSliceNumber >= mNumberOfSlices[(Int32)mKitchenObjectType])
             {
                 getKitchenObject().destroySelf();
 
@@ -88,7 +88,7 @@ public class CutCounter : BaseCounter, IHasProgress
                     default:
                         break;
                 }
-
+                
                 KitchenObject.spawnKitchenObject(mKitchenScriptObject[indexKitchenScriptObjects], this);
             }
         }
