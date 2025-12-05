@@ -7,11 +7,11 @@ public class PlateKitchenObject : KitchenObject
     private void Awake()
     {
         mListKitchenObjects = new List<KitchenScriptObject>();
-        mListAllowedKitchenObject = new List<KitchenScriptObject>();
     }
 
     public bool tryAddIngredient(KitchenScriptObject pKitchenScriptObject)
     {
+        Debug.Log(pKitchenScriptObject.name);
         if (!mListAllowedKitchenObject.Contains(pKitchenScriptObject))
             return false;
         if (mListKitchenObjects.Contains(pKitchenScriptObject))
