@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProgressBarUI
   mBarImage: {fileID: 7585889209837804314}
-  mGameObjectForProgress: {fileID: 0}
+  mGameObjectForProgress: {fileID: 8746945878803194902}
 --- !u!1 &8746945878803194902
 GameObject:
   m_ObjectHideFlags: 0

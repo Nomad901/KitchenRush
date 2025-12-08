@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\nomad\\KitchenGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\counters\\clearcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\clearcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\kitchenobjects\\plateingredientscompletevisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kitchenobjects\\plateingredientscompletevisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\kitchenobjects\\platekitchenobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\kitchenobjects\\platekitchenobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kitchenobjects\\platekitchenobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\counters\\stovecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\stovecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\counters\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\platecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -46,41 +50,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlateCounter.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Counters\\PlateCounter.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwC8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T15:07:16.301Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "PlateKitchenObject.cs",
               "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\KitchenObjects\\PlateKitchenObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\KitchenObjects\\PlateKitchenObject.cs",
               "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\KitchenObjects\\PlateKitchenObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\KitchenObjects\\PlateKitchenObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T04:36:02.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StoveCounter.cs",
-              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\StoveCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\StoveCounter.cs",
-              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\StoveCounter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Counters\\StoveCounter.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAIwIQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T04:34:30.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T04:50:19.365Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ClearCounter.cs",
-              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\ClearCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\ClearCounter.cs",
-              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\ClearCounter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Counters\\ClearCounter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABBAAAAAAAAAA==",
+              "Title": "PlateIngredientsCompleteVisual.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\KitchenObjects\\PlateIngredientsCompleteVisual.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\KitchenObjects\\PlateIngredientsCompleteVisual.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\KitchenObjects\\PlateIngredientsCompleteVisual.cs",
+              "RelativeToolTip": "Assets\\Scripts\\KitchenObjects\\PlateIngredientsCompleteVisual.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T11:09:31.948Z",
+              "WhenOpened": "2025-12-05T04:46:44.407Z",
               "EditorCaption": ""
             }
           ]

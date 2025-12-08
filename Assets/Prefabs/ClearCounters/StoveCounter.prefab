@@ -10243,7 +10243,8 @@ MonoBehaviour:
   mDefaultTopPoint: {fileID: 3110508429636141975}
   mFryingRecipeSOArray:
   - {fileID: 11400000, guid: 02ecf54a51e7449419d884820266c9d0, type: 2}
-  mBurningRecipeSOArray: []
+  mBurningRecipeSOArray:
+  - {fileID: 11400000, guid: 59694b00d41f39442b28e8ad67872607, type: 2}
 --- !u!4 &977528958852048027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4972315603302014274, guid: 9fffb3a63a924974cbeb83557446cd73, type: 3}
