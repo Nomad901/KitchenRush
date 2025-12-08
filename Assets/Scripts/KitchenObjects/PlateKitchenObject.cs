@@ -16,7 +16,7 @@ public class PlateKitchenObject : KitchenObject
             return false;
         if (mListKitchenObjects.Contains(pKitchenScriptObject))
             return false;
-
+    
         mListKitchenObjects.Add(pKitchenScriptObject);
         mOnKitchenObjectAdded?.Invoke(this, new KitchenObjectAddedEventArgs
         {
