@@ -450,6 +450,7 @@
 "Assets/Scripts/Counters/ClearCounter.cs"
 "Assets/Scripts/Counters/ContainerCounter.cs"
 "Assets/Scripts/Counters/CutCounter.cs"
+"Assets/Scripts/Counters/DeliveryCounter.cs"
 "Assets/Scripts/Counters/PlateCounter.cs"
 "Assets/Scripts/Counters/StoveCounter.cs"
 "Assets/Scripts/Counters/TrashCounter.cs"
