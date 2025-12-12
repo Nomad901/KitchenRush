@@ -139,6 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7854727586054942368}
+  - component: {fileID: 194906348636968910}
   m_Layer: 5
   m_Name: IconTemplate
   m_TagString: Untagged
@@ -167,6 +168,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &194906348636968910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794370974510037769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124721accb7be964fb0afac2e956cc26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlateSingleIconUI
+  mImage: {fileID: 3411670289892650262}
 --- !u!1 &4849277272234735882
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +195,7 @@ GameObject:
   - component: {fileID: 3698404540067528506}
   - component: {fileID: 7096638716709379834}
   - component: {fileID: 1286837845545607985}
+  - component: {fileID: 2275596400830856115}
   m_Layer: 5
   m_Name: PlateIconsUI
   m_TagString: Untagged
@@ -307,6 +322,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bba4cc05951da443aa2668bcba84eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlateIconUI
+  mPlateKitchenObject: {fileID: 8369511233502341878}
+  mIconTemplate: {fileID: 7854727586054942368}
+--- !u!114 &2275596400830856115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4849277272234735882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b5c70ed8dec543ab44197d245e43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookAtCamera
+  mCameraMode: 0
 --- !u!1 &4968399551064867651
 GameObject:
   m_ObjectHideFlags: 0

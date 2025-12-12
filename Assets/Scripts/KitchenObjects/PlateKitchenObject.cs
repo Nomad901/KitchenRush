@@ -26,6 +26,11 @@ public class PlateKitchenObject : KitchenObject
         return true;
     }
 
+    public List<KitchenScriptObject> getListKitchenObjectSO()
+    {
+        return mListKitchenObjects;
+    }
+
     private List<KitchenScriptObject> mListKitchenObjects;
 
     [SerializeField]
