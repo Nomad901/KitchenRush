@@ -5,12 +5,15 @@ using System;
 using System.Collections.Generic;
 using TreeEditor;
 using Unity.Mathematics;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
 {
     private void Awake()
     {
+        mInstance = this;
+
         mWaitingRecipeSOList = new List<RecipeSO>();
     }
     private void Update()
@@ -27,9 +30,39 @@ public class DeliveryManager : MonoBehaviour
             mWaitingRecipeSOList.Add(waitingRecipeSO);
         }
     }
+    public void deliverPlate(PlateKitchenObject pPlateKitchenObject)
+    {
+        for (int i = 0; i < mWaitingRecipeSOList.Count; ++i)
+        {
+            RecipeSO waitingRecipeSO = mWaitingRecipeSOList[i];
+
+            if(waitingRecipeSO.mNeededKitchenObjects.Count == pPlateKitchenObject.getListKitchenObjectSO().Count)
+            {
+                bool plateContentMatchesRecipe = true;
+                foreach (KitchenScriptObject kitchenObjectSO in waitingRecipeSO.mNeededKitchenObjects)
+                {
+                    if (!pPlateKitchenObject.getListKitchenObjectSO().Contains(kitchenObjectSO))
+                    {
+                        plateContentMatchesRecipe = false;
+                        break;
+                    }
+                }
+                if (plateContentMatchesRecipe) 
+                {
+                    Debug.Log("Player delivered a proper recipe!");
+                    mWaitingRecipeSOList.RemoveAt(i);
+                    return;
+                }
+            }
+        }
+
+        Debug.Log("Player didnt delivered a correct recipe!");
+    }
 
     [SerializeField]
     private RecipeListSO mRecipeSOList;
+
+    public static DeliveryManager mInstance { get; private set; }
 
     private List<RecipeSO> mWaitingRecipeSOList;
     private float mTimerOfOrder;

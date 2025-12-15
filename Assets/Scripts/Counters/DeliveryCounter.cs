@@ -8,6 +8,7 @@ public class DeliveryCounter : BaseCounter
         {
             if(pPlayer.getKitchenObject().tryGetPlate(out PlateKitchenObject plateKitchenObject))
             {
+                DeliveryManager.mInstance.deliverPlate(plateKitchenObject);
                 pPlayer.getKitchenObject().destroySelf();
             }
         }

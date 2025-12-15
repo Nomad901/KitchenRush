@@ -51,7 +51,13 @@ public class CutCounter : BaseCounter, IHasProgress
                 if (pPlayer.getKitchenObject().tryGetPlate(out PlateKitchenObject plate))
                 {
                     if (plate.tryAddIngredient(getKitchenObject().getKitchenScriptObject()))
+                    {
+                        mOnBarChanged?.Invoke(this, new OnProgressChangedEventArgs
+                        {
+                            mProgressFloat = 0.0f
+                        });
                         getKitchenObject().destroySelf();
+                    }
                 }
             }
         }
