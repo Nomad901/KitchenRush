@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: Salad
   m_EditorClassIdentifier: Assembly-CSharp::RecipeSO
   mNeededKitchenObjects:
-  - {fileID: 11400000, guid: 2368db09f74289c418af247a126f9420, type: 2}
-  - {fileID: 11400000, guid: 412e5a91c062bf848acc192e495a8c76, type: 2}
-  - {fileID: 11400000, guid: f745f831d56113d4d92c1d377e993312, type: 2}
   - {fileID: 11400000, guid: 6e6b93ba2fea7f14c867f733ffceeaaa, type: 2}
   - {fileID: 11400000, guid: 781372c9935a2b345bd92fe40439ff42, type: 2}
-  mRecipeName: Superburger
+  mRecipeName: Salad

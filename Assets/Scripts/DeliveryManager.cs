@@ -56,7 +56,7 @@ public class DeliveryManager : MonoBehaviour
             }
         }
 
-        Debug.Log("Player didnt delivered a correct recipe!");
+        Debug.Log("Player didnt deliver a correct recipe!");
     }
 
     [SerializeField]
