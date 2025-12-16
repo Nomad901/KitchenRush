@@ -26,8 +26,8 @@ public class DeliveryManager : MonoBehaviour
 
             Int32 randomIndex = UnityEngine.Random.Range(0, mRecipeSOList.mListRecipeSO.Count);
             RecipeSO waitingRecipeSO = mRecipeSOList.mListRecipeSO[randomIndex];
-            Debug.Log(waitingRecipeSO.name);
             mWaitingRecipeSOList.Add(waitingRecipeSO);
+            mOnRecipeSpawned?.Invoke(this, EventArgs.Empty);
         }
     }
     public void deliverPlate(PlateKitchenObject pPlateKitchenObject)
@@ -49,24 +49,29 @@ public class DeliveryManager : MonoBehaviour
                 }
                 if (plateContentMatchesRecipe) 
                 {
-                    Debug.Log("Player delivered a proper recipe!");
                     mWaitingRecipeSOList.RemoveAt(i);
+                    mOnRecipeCompleted?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
-
-        Debug.Log("Player didnt deliver a correct recipe!");
     }
+    public List<RecipeSO> getWaitingListRecipeSO()
+    {
+        return mWaitingRecipeSOList;
+    }
+    
+    public static DeliveryManager mInstance { get; private set; }
 
     [SerializeField]
     private RecipeListSO mRecipeSOList;
-
-    public static DeliveryManager mInstance { get; private set; }
 
     private List<RecipeSO> mWaitingRecipeSOList;
     private float mTimerOfOrder;
     
     private const float TIMER_OF_ORDER_MAX = 4.0f;
     private const Int32 WAITING_RECIPES_MAX = 4;
+
+    public event EventHandler mOnRecipeSpawned;
+    public event EventHandler mOnRecipeCompleted;
 }

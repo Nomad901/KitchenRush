@@ -478,6 +478,7 @@
 "Assets/Scripts/Recipies/RecipeSO.cs"
 "Assets/Scripts/System/CollisionSystem.cs"
 "Assets/Scripts/System/GameInput.cs"
+"Assets/Scripts/UI/DeliveryManagerUI.cs"
 "Assets/Scripts/Utils/IHasProgress.cs"
 "Assets/Scripts/Utils/LookAtCamera.cs"
 "Assets/Scripts/Utils/ProgressBarUI.cs"

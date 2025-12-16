@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerInteractions.cs" />
     <Compile Include="Assets\Scripts\KitchenObjects\IKitchenObjectParent.cs" />
     <Compile Include="Assets\Scripts\Recipies\FryingRecipeSO.cs" />
+    <Compile Include="Assets\Scripts\UI\DeliveryManagerUI.cs" />
     <Compile Include="Assets\Scripts\System\GameInput.cs" />
   </ItemGroup>
   <ItemGroup>
