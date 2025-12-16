@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\nomad\\KitchenGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\counters\\deliverycounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\deliverycounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\ui\\deliverymanagerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\deliverymanagerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\deliverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,14 +47,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DeliveryCounter.cs",
-              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\DeliveryCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\DeliveryCounter.cs",
-              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\DeliveryCounter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Counters\\DeliveryCounter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Title": "DeliveryManagerUI.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\DeliveryManagerUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DeliveryManagerUI.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\DeliveryManagerUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\DeliveryManagerUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T10:41:09.334Z",
+              "WhenOpened": "2025-12-16T13:22:49.387Z",
               "EditorCaption": ""
             },
             {
@@ -65,7 +65,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeliveryManager.cs",
               "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\DeliveryManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\DeliveryManager.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowDcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAwwEoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-15T09:36:43.747Z"
             }

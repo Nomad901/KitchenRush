@@ -62,16 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Counters\DeliveryCounter.cs" />
-    <Compile Include="Assets\Scripts\KitchenObjects\PlateIconUI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\Recipies\RecipeSO.cs" />
     <Compile Include="Assets\Scripts\Utils\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\StoveCounterVisual.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\ContainerCounterVisual.cs" />
+    <Compile Include="Assets\Scripts\UI\PlateSingleIconUI.cs" />
+    <Compile Include="Assets\Scripts\UI\PlateIconUI.cs" />
     <Compile Include="Assets\Scripts\Counters\ClearCounter.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\CuttingCounterVisual.cs" />
-    <Compile Include="Assets\Scripts\KitchenObjects\PlateSingleIconUI.cs" />
     <Compile Include="Assets\Scripts\Recipies\BurningRecipeSO.cs" />
     <Compile Include="Assets\Scripts\System\CollisionSystem.cs" />
     <Compile Include="Assets\Scripts\Counters\CutCounter.cs" />
@@ -83,10 +83,11 @@
     <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
-    <Compile Include="Assets\Scripts\Utils\ProgressBarUI.cs" />
+    <Compile Include="Assets\Scripts\UI\DeliveryManagerUI_Single.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\PlatesCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Recipies\RecipeListSO.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\SelectedCounterVisual.cs" />
+    <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
     <Compile Include="Assets\Scripts\Utils\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />

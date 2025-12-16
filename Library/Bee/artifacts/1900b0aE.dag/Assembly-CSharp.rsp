@@ -463,10 +463,8 @@
 "Assets/Scripts/KitchenObjects/IKitchenObjectParent.cs"
 "Assets/Scripts/KitchenObjects/KitchenObject.cs"
 "Assets/Scripts/KitchenObjects/KitchenScriptObject.cs"
-"Assets/Scripts/KitchenObjects/PlateIconUI.cs"
 "Assets/Scripts/KitchenObjects/PlateIngredientsCompleteVisual.cs"
 "Assets/Scripts/KitchenObjects/PlateKitchenObject.cs"
-"Assets/Scripts/KitchenObjects/PlateSingleIconUI.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerAnimator.cs"
 "Assets/Scripts/Player/PlayerInputActions.cs"
@@ -479,9 +477,12 @@
 "Assets/Scripts/System/CollisionSystem.cs"
 "Assets/Scripts/System/GameInput.cs"
 "Assets/Scripts/UI/DeliveryManagerUI.cs"
+"Assets/Scripts/UI/DeliveryManagerUI_Single.cs"
+"Assets/Scripts/UI/PlateIconUI.cs"
+"Assets/Scripts/UI/PlateSingleIconUI.cs"
+"Assets/Scripts/UI/ProgressBarUI.cs"
 "Assets/Scripts/Utils/IHasProgress.cs"
 "Assets/Scripts/Utils/LookAtCamera.cs"
-"Assets/Scripts/Utils/ProgressBarUI.cs"
 -langversion:9.0
 /deterministic
 /optimize+
