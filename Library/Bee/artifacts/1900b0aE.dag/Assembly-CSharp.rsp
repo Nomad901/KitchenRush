@@ -474,6 +474,7 @@
 "Assets/Scripts/Recipies/FryingRecipeSO.cs"
 "Assets/Scripts/Recipies/RecipeListSO.cs"
 "Assets/Scripts/Recipies/RecipeSO.cs"
+"Assets/Scripts/SoundManager.cs"
 "Assets/Scripts/System/CollisionSystem.cs"
 "Assets/Scripts/System/GameInput.cs"
 "Assets/Scripts/UI/DeliveryManagerUI.cs"

@@ -51,10 +51,12 @@ public class DeliveryManager : MonoBehaviour
                 {
                     mWaitingRecipeSOList.RemoveAt(i);
                     mOnRecipeCompleted?.Invoke(this, EventArgs.Empty);
+                    mOnRecipeSuccess?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
+        mOnRecipeFailed?.Invoke(this, EventArgs.Empty);
     }
     public List<RecipeSO> getWaitingListRecipeSO()
     {
@@ -71,7 +73,10 @@ public class DeliveryManager : MonoBehaviour
     
     private const float TIMER_OF_ORDER_MAX = 4.0f;
     private const Int32 WAITING_RECIPES_MAX = 4;
-
+    
     public event EventHandler mOnRecipeSpawned;
     public event EventHandler mOnRecipeCompleted;
+    public event EventHandler mOnRecipeSuccess;
+    public event EventHandler mOnRecipeFailed;
+
 }

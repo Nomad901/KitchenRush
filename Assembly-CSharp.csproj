@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Counters\PlateCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
     <Compile Include="Assets\Scripts\UI\DeliveryManagerUI_Single.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\PlatesCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Recipies\RecipeListSO.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\SelectedCounterVisual.cs" />
