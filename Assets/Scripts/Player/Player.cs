@@ -48,6 +48,11 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     public void setKitchenObject(KitchenObject pKitchenObject)
     {
         mKitchenObject = pKitchenObject;
+
+        if (mKitchenObject != null)
+            mOnPickUp?.Invoke(this, EventArgs.Empty);
+        else
+            mOnDrop?.Invoke(this, EventArgs.Empty);
     }
     public KitchenObject getKitchenObject()
     {
@@ -71,4 +76,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private PlayerInteractions mPlayerInteractions;
     private PlayerMovement mPlayerMovement;
+
+    public static event EventHandler mOnPickUp;
+    public static event EventHandler mOnDrop;
 }

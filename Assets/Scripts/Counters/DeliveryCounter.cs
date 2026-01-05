@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class DeliveryCounter : BaseCounter
 {
+    private void Start()
+    {
+        mInstance = this;
+    }
+
     public override void interact(Player pPlayer)
     {
         if(pPlayer.hasKitchenObject())
@@ -13,4 +18,6 @@ public class DeliveryCounter : BaseCounter
             }
         }
     }
+
+    public static DeliveryCounter mInstance { get; private set; }
 }

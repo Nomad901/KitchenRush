@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         bool canMove = mCollisionSystem.handleCollisionPlayer(ref moveDir, mMoveSpeed);
         if (canMove)
             mTransform.position += moveDir * mMoveSpeed * Time.deltaTime;
-
+        
         handleRotation(inputVec, moveDir);
     }
     private void handleRotation(Vector2 pInputVec, Vector3 pMoveDir)
@@ -34,8 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(pMoveDir);
         mTransform.rotation = Quaternion.Lerp(mTransform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
-    }
 
+        mOnFootStep?.Invoke(this, EventArgs.Empty);
+
+    }
+    public Transform getTransform()
+    {
+        return mTransform;
+    }
     public bool isWalking()
     {
         return mIsWalking;
@@ -47,4 +55,6 @@ public class PlayerMovement : MonoBehaviour
     private CollisionSystem mCollisionSystem;
     private Transform mTransform;
     private bool mIsWalking;
+
+    public static event EventHandler mOnFootStep;
 }

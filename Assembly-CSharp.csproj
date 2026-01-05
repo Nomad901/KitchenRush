@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\UI\DeliveryManagerUI_Single.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\PlatesCounterVisual.cs" />
+    <Compile Include="Assets\Scripts\AudioClipRefSO.cs" />
     <Compile Include="Assets\Scripts\Recipies\RecipeListSO.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\SelectedCounterVisual.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />

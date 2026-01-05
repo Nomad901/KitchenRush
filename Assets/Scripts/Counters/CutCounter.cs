@@ -76,7 +76,7 @@ public class CutCounter : BaseCounter, IHasProgress
                 mCurrentSliceNumber++;
 
                 mOnCut?.Invoke(this, EventArgs.Empty);
-
+                mOnAnyCut?.Invoke(this, EventArgs.Empty);
                 mOnBarChanged?.Invoke(this, new OnProgressChangedEventArgs
                 {
                     mProgressFloat = (float)mCurrentSliceNumber / mNumberOfSlices[(Int32)mKitchenObjectType]
@@ -153,4 +153,5 @@ public class CutCounter : BaseCounter, IHasProgress
     private KitchenObjectType mKitchenObjectType;
 
     public event EventHandler mOnCut;
+    public static event EventHandler mOnAnyCut;
 }

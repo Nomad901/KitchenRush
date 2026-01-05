@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\nomad\\KitchenGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\deliverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\audiocliprefso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiocliprefso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\deliverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deliverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\counters\\trashcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\trashcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,16 +62,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T16:31:39.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Player\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T16:31:10.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TrashCounter.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\TrashCounter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\TrashCounter.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\TrashCounter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Counters\\TrashCounter.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T16:26:55.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DeliveryManager.cs",
               "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\DeliveryManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeliveryManager.cs",
               "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\DeliveryManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\DeliveryManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAA9wBoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T09:36:43.747Z",
+              "WhenOpened": "2026-01-02T15:29:09.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AudioClipRefSO.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\AudioClipRefSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioClipRefSO.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\AudioClipRefSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AudioClipRefSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T15:55:52.572Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SoundManager.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\SoundManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SoundManager.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\SoundManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SoundManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T15:26:57.869Z"
             }
           ]
         }
