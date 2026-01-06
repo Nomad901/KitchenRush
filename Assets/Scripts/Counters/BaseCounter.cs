@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BaseCounter : MonoBehaviour, IKitchenObjectParent
@@ -18,6 +19,9 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     public void setKitchenObject(KitchenObject pKitchenObject)
     {
         mKitchenObject = pKitchenObject;
+
+        if (pKitchenObject != null)
+            mOnAnyObjectPut?.Invoke(this, EventArgs.Empty);
     }
     public KitchenObject getKitchenObject()
     {
@@ -36,4 +40,6 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     private Transform mDefaultTopPoint;
 
     private KitchenObject mKitchenObject;
+
+    public static event EventHandler mOnAnyObjectPut;
 }

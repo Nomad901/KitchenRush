@@ -12,12 +12,18 @@ public class PlayerInteractions : MonoBehaviour
 
     private void MGameInput_mOnInteractAlternate(object sender, EventArgs e)
     {
+        if (!GameHandler.mInstance.gameIsPlaying())
+            return;
+
         if (mBaseCounter != null)
             mBaseCounter.interactAlternate(Player.Instance);
     }
 
     private void MGameInput_mOnInteract(object sender, System.EventArgs e)
     {
+        if (!GameHandler.mInstance.gameIsPlaying())
+            return;
+
         if (mBaseCounter != null)
             mBaseCounter.interact(Player.Instance);
     }

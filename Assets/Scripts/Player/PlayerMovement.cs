@@ -36,9 +36,6 @@ public class PlayerMovement : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(pMoveDir);
         mTransform.rotation = Quaternion.Lerp(mTransform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
-
-        mOnFootStep?.Invoke(this, EventArgs.Empty);
-
     }
     public Transform getTransform()
     {
@@ -55,6 +52,4 @@ public class PlayerMovement : MonoBehaviour
     private CollisionSystem mCollisionSystem;
     private Transform mTransform;
     private bool mIsWalking;
-
-    public static event EventHandler mOnFootStep;
 }

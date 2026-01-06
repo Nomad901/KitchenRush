@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    private void Awake()
+    {
+        mInstance = this;
+    }
     private void Start()
     {
         DeliveryManager.mInstance.mOnRecipeSuccess +=  DeliveryManager_mOnRecipeSuccess;
@@ -12,26 +16,18 @@ public class SoundManager : MonoBehaviour
         CutCounter.mOnAnyCut += CutCounter_mOnAnyCut;
 
         Player.mOnPickUp += Player_mOnPickUp;
-        Player.mOnDrop += Player_mOnDrop;
-        PlayerMovement.mOnFootStep += PlayerMovement_mOnFootStep;
-
-        TrashCounter.mInstance.mOnTrashInteract += MInstance_mOnTrashInteract;
-
+        BaseCounter.mOnAnyObjectPut += BaseCounter_mOnAnyObjectPut;
+        TrashCounter.mOnTrashInteract += TrashCounter_mOnTrashInteract;
     }
-    private void MInstance_mOnTrashInteract(object sender, EventArgs e)
+    private void TrashCounter_mOnTrashInteract(object sender, EventArgs e)
     {
         TrashCounter trashCounter = sender as TrashCounter;
         playSound(mAudioClipRefSO.mTrash, trashCounter.transform.position);
     }
-    private void Player_mOnDrop(object sender, EventArgs e)
+    private void BaseCounter_mOnAnyObjectPut(object sender, EventArgs e)
     {
-        Player player = sender as Player;
-        playSound(mAudioClipRefSO.mObjectDrop, player.transform.position);
-    }
-    private void PlayerMovement_mOnFootStep(object sender, EventArgs e)
-    {
-        PlayerMovement playerMovement = sender as PlayerMovement;
-        playSound(mAudioClipRefSO.mFootstep, playerMovement.getTransform().position);
+        BaseCounter baseCounter = sender as BaseCounter;
+        playSound(mAudioClipRefSO.mObjectDrop, baseCounter.transform.position);
     }
     private void Player_mOnPickUp(object sender, EventArgs e)
     {
@@ -62,8 +58,13 @@ public class SoundManager : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(pAudioClip, pPosOfAudio, pVolume);
     }
+    public void playFootStepAudio(Vector3 pPos, float pVolume)
+    {
+        playSound(mAudioClipRefSO.mFootstep, pPos, pVolume);
+    }
 
     [SerializeField]
     private AudioClipRefSO mAudioClipRefSO;
 
+    public static SoundManager mInstance { get; private set; }
 }

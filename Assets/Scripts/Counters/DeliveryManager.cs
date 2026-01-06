@@ -13,7 +13,7 @@ public class DeliveryManager : MonoBehaviour
     private void Awake()
     {
         mInstance = this;
-
+        mSuccessfulRecipeQuantity = 0;
         mWaitingRecipeSOList = new List<RecipeSO>();
     }
     private void Update()
@@ -49,6 +49,7 @@ public class DeliveryManager : MonoBehaviour
                 }
                 if (plateContentMatchesRecipe) 
                 {
+                    mSuccessfulRecipeQuantity++;
                     mWaitingRecipeSOList.RemoveAt(i);
                     mOnRecipeCompleted?.Invoke(this, EventArgs.Empty);
                     mOnRecipeSuccess?.Invoke(this, EventArgs.Empty);
@@ -62,7 +63,11 @@ public class DeliveryManager : MonoBehaviour
     {
         return mWaitingRecipeSOList;
     }
-    
+    public Int32 getSuccessfulRecipeQuantity()
+    {
+        return mSuccessfulRecipeQuantity;
+    }
+
     public static DeliveryManager mInstance { get; private set; }
 
     [SerializeField]
@@ -79,4 +84,5 @@ public class DeliveryManager : MonoBehaviour
     public event EventHandler mOnRecipeSuccess;
     public event EventHandler mOnRecipeFailed;
 
+    private Int32 mSuccessfulRecipeQuantity;
 }

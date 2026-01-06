@@ -6,20 +6,14 @@ using UnityEngine.Rendering;
 
 public class TrashCounter : BaseCounter
 {
-    private void Awake()
-    {
-        mInstance = this;
-    }
     public override void interact(Player pPlayer)
     {
         if (pPlayer.hasKitchenObject())
         {
-            Destroy(pPlayer.getKitchenObject().gameObject);
+            pPlayer.getKitchenObject().destroySelf();
             mOnTrashInteract?.Invoke(this, EventArgs.Empty);
         }
     }
 
-    public static TrashCounter mInstance { get; private set; }
-
-    public event EventHandler mOnTrashInteract;
+    public static event EventHandler mOnTrashInteract;
 }
