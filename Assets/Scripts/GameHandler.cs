@@ -14,6 +14,12 @@ public class GameHandler : MonoBehaviour
         switch(mCurrentState)
         {
             case State.WAITING_TO_START:
+                if(mFirstTime)
+                {
+                    mOnStateChanged?.Invoke(this, EventArgs.Empty);
+                    mFirstTime = false;
+                }
+
                 mWaitingToStartTimer -= Time.deltaTime;
                 if (mWaitingToStartTimer < 0.0f)
                 {
@@ -25,6 +31,8 @@ public class GameHandler : MonoBehaviour
                 mCountDownToStartTimer -= Time.deltaTime;
                 if (mCountDownToStartTimer < 0.0f)
                 {
+                    mGamePlayingTimer = GameSettings.mGamePlayingTimerMax;
+
                     mCurrentState = State.GAME_PLAYING;
                     mOnStateChanged?.Invoke(this, EventArgs.Empty);
                 }
@@ -61,6 +69,10 @@ public class GameHandler : MonoBehaviour
     {
         return mCountDownToStartTimer;
     }
+    public float getGamePlayingTimerNormalized()
+    {
+        return 1 - (mGamePlayingTimer / GameSettings.mGamePlayingTimerMax);
+    }
 
     private enum State
     { 
@@ -73,7 +85,8 @@ public class GameHandler : MonoBehaviour
 
     private float mWaitingToStartTimer = 1.0f;
     private float mCountDownToStartTimer = 3.0f;
-    private float mGamePlayingTimer = 10.0f;
+    private float mGamePlayingTimer;
+    private bool mFirstTime = true;
 
     public static GameHandler mInstance { get; private set; }
 

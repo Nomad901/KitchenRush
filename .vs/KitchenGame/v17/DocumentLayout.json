@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\nomad\\KitchenGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\ui\\gameoverui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\gameoverui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\ui\\settingsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\settingsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\counters\\deliverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\counters\\deliverymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\gamesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\gamehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|c:\\users\\nomad\\kitchengame\\assets\\scripts\\ui\\gamestartcountdownui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\gamestartcountdownui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\loadercallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loadercallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\loader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|C:\\Users\\nomad\\KitchenGame\\assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E4E225A-A212-54AA-D67F-428E4244505C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,41 +63,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DeliveryManager.cs",
-              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\DeliveryManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Counters\\DeliveryManager.cs",
-              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Counters\\DeliveryManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Counters\\DeliveryManager.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwEAAAAAFAAAAAAAAAA==",
+              "Title": "GameSettings.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\GameSettings.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSettings.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\GameSettings.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T03:01:39.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T04:37:47.121Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GameOverUI.cs",
-              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\GameOverUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\GameOverUI.cs",
-              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\GameOverUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\GameOverUI.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Title": "SettingsUI.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\SettingsUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\SettingsUI.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\SettingsUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\SettingsUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T03:00:05.846Z",
+              "WhenOpened": "2026-01-07T04:02:31.164Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GameStartCountDownUI.cs",
-              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\GameStartCountDownUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\GameStartCountDownUI.cs",
-              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\GameStartCountDownUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\GameStartCountDownUI.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Title": "LoaderCallBack.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\LoaderCallBack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoaderCallBack.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\LoaderCallBack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoaderCallBack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T02:27:57.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-07T03:50:30.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Loader.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Loader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Loader.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\Loader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Loader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T02:43:09.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainMenuUI.cs",
+              "DocumentMoniker": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T14:40:24.914Z"
             },
             {
               "$type": "Document",
@@ -99,10 +129,9 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameHandler.cs",
               "ToolTip": "C:\\Users\\nomad\\KitchenGame\\Assets\\Scripts\\GameHandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameHandler.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAkwDcAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T01:57:26.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T01:57:26.16Z"
             }
           ]
         }
