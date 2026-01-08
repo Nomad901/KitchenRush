@@ -7,7 +7,7 @@ public class PlateSingleIconUI : MonoBehaviour
     {
         mImage.sprite = pKitchenScriptObject.mSprite;
     }
-
+    
     [SerializeField]
     private Image mImage;
 }

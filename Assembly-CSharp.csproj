@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Loader.cs" />
     <Compile Include="Assets\Scripts\Utils\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\StoveCounterVisual.cs" />
+    <Compile Include="Assets\Scripts\DeliveryManagerTimeOfNextOrderUI.cs" />
     <Compile Include="Assets\Scripts\GameSettings.cs" />
     <Compile Include="Assets\Scripts\Sounds\AudioClipRefSO.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\ContainerCounterVisual.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\Sounds\StoveCounterSound.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
+    <Compile Include="Assets\Scripts\DeliveryManagerMaxOrdersUI.cs" />
     <Compile Include="Assets\Scripts\UI\DeliveryManagerUI_Single.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\PlatesCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Recipies\RecipeListSO.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\Utils\LookAtCamera.cs" />
+    <Compile Include="Assets\Scripts\ChangerOfTimeSettingsUI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSounds.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayingClockUI.cs" />

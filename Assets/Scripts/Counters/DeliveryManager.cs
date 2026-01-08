@@ -20,9 +20,9 @@ public class DeliveryManager : MonoBehaviour
     {
         mTimerOfOrder -= Time.deltaTime;
         if (mTimerOfOrder <= 0.0f &&
-            mWaitingRecipeSOList.Count < WAITING_RECIPES_MAX)
+            mWaitingRecipeSOList.Count < GameSettings.mWaitingRecipesMax)
         {
-            mTimerOfOrder = TIMER_OF_ORDER_MAX;
+            mTimerOfOrder = GameSettings.mTimerOfNextOrder;
 
             Int32 randomIndex = UnityEngine.Random.Range(0, mRecipeSOList.mListRecipeSO.Count);
             RecipeSO waitingRecipeSO = mRecipeSOList.mListRecipeSO[randomIndex];
@@ -75,9 +75,6 @@ public class DeliveryManager : MonoBehaviour
 
     private List<RecipeSO> mWaitingRecipeSOList;
     private float mTimerOfOrder;
-    
-    private const float TIMER_OF_ORDER_MAX = 4.0f;
-    private const Int32 WAITING_RECIPES_MAX = 4;
     
     public event EventHandler mOnRecipeSpawned;
     public event EventHandler mOnRecipeCompleted;
