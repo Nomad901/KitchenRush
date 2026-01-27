@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\Utils\LookAtCamera.cs" />
+    <Compile Include="Assets\Scripts\UI\GamePauseUI.cs" />
     <Compile Include="Assets\Scripts\ChangerOfTimeSettingsUI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSounds.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />

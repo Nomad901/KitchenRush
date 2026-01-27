@@ -86,9 +86,15 @@ public class GameHandler : MonoBehaviour
     {
         mIsGamePaused = !mIsGamePaused;
         if(mIsGamePaused)
+        {
+            mOnGamePaused?.Invoke(this, EventArgs.Empty);
             Time.timeScale = 0.0f;
+        }
         else
+        {
+            mOnGameUnPaused?.Invoke(this, EventArgs.Empty);
             Time.timeScale = 1.0f;
+        }
     }
 
     private enum State
@@ -106,6 +112,8 @@ public class GameHandler : MonoBehaviour
     private bool mFirstTime = true;
     private bool mIsGamePaused = false;
     public static GameHandler mInstance { get; private set; }
-
+    
     public event EventHandler mOnStateChanged;
+    public event EventHandler mOnGamePaused;
+    public event EventHandler mOnGameUnPaused;
 }
