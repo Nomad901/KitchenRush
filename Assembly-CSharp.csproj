@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3E4E225A-A212-54AA-D67F-428E4244505C}</ProjectGuid>
+    <ProjectGuid>{A039A2D4-8CA5-9E67-A3EC-0B6C9DCB2ACB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -1369,11 +1369,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CodeMonkeyFreeEditor.csproj">
-      <Project>{780FDAC2-0516-BDD8-3E7F-778AF0947966}</Project>
+      <Project>{55D9DAA7-D042-A4A2-47D7-B07C5E164A53}</Project>
       <Name>CodeMonkeyFreeEditor</Name>
     </ProjectReference>
     <ProjectReference Include="CodeMonkeyFree.csproj">
-      <Project>{F78AEE54-2E1A-B599-2041-8D6AE8DF13A0}</Project>
+      <Project>{9C7A7AD5-748F-53F9-A642-FFD78FED9C5D}</Project>
       <Name>CodeMonkeyFree</Name>
     </ProjectReference>
   </ItemGroup>

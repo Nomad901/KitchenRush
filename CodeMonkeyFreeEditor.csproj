@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{780FDAC2-0516-BDD8-3E7F-778AF0947966}</ProjectGuid>
+    <ProjectGuid>{55D9DAA7-D042-A4A2-47D7-B07C5E164A53}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>CodeMonkeyFreeEditor</AssemblyName>
@@ -572,10 +572,6 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.2.7f2\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.2.7f2\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
@@ -1153,7 +1149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="CodeMonkeyFree.csproj">
-      <Project>{F78AEE54-2E1A-B599-2041-8D6AE8DF13A0}</Project>
+      <Project>{9C7A7AD5-748F-53F9-A642-FFD78FED9C5D}</Project>
       <Name>CodeMonkeyFree</Name>
     </ProjectReference>
   </ItemGroup>
