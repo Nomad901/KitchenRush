@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class GameHandler : MonoBehaviour
 {
@@ -9,6 +8,16 @@ public class GameHandler : MonoBehaviour
         mInstance = this;
         mCurrentState = State.WAITING_TO_START;
     }
+    private void Start()
+    {
+        GameInput.mInstance.mOnPauseAction += MInstance_mOnPauseAction;
+    }
+
+    private void MInstance_mOnPauseAction(object sender, EventArgs e)
+    {
+        pauseGame();
+    }
+
     private void Update()
     {
         switch(mCurrentState)
@@ -73,6 +82,14 @@ public class GameHandler : MonoBehaviour
     {
         return 1 - (mGamePlayingTimer / GameSettings.mGamePlayingTimerMax);
     }
+    public void pauseGame()
+    {
+        mIsGamePaused = !mIsGamePaused;
+        if(mIsGamePaused)
+            Time.timeScale = 0.0f;
+        else
+            Time.timeScale = 1.0f;
+    }
 
     private enum State
     { 
@@ -87,7 +104,7 @@ public class GameHandler : MonoBehaviour
     private float mCountDownToStartTimer = 3.0f;
     private float mGamePlayingTimer;
     private bool mFirstTime = true;
-
+    private bool mIsGamePaused = false;
     public static GameHandler mInstance { get; private set; }
 
     public event EventHandler mOnStateChanged;
