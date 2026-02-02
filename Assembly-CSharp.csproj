@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Counters\DeliveryCounter.cs" />
+    <Compile Include="Assets\Scripts\ResetStaticDataManager.cs" />
     <Compile Include="Assets\Scripts\UI\ReadyTextUI.cs" />
     <Compile Include="Assets\Scripts\LoaderCallBack.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputActions.cs" />

@@ -482,6 +482,7 @@
 "Assets/Scripts/Recipies/FryingRecipeSO.cs"
 "Assets/Scripts/Recipies/RecipeListSO.cs"
 "Assets/Scripts/Recipies/RecipeSO.cs"
+"Assets/Scripts/ResetStaticDataManager.cs"
 "Assets/Scripts/Sounds/AudioClipRefSO.cs"
 "Assets/Scripts/Sounds/SoundManager.cs"
 "Assets/Scripts/Sounds/StoveCounterSound.cs"

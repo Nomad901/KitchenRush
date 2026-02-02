@@ -21,12 +21,11 @@ public class MainMenuUI : MonoBehaviour
 
         Time.timeScale = 1.0f;
     }
-
+    
     [SerializeField]
     private Button mPlayButton;
     [SerializeField]
     private Button mSettingsButton;
     [SerializeField]
     private Button mQuitButton;
-
 }

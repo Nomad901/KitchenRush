@@ -35,6 +35,10 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     {
         return mKitchenObject != null;
     }
+    public static void resetStaticData()
+    {
+        mOnAnyObjectPut = null;
+    }
 
     [SerializeField]
     private Transform mDefaultTopPoint;

@@ -108,6 +108,11 @@ public class CutCounter : BaseCounter, IHasProgress
         }
     }
 
+    public static new void resetStaticData()
+    {
+        mOnAnyCut = null;
+    }
+    
     //
     // manages string through clearing redundant braces;
     // for example: Tomato(clone) -> Tomato;

@@ -15,6 +15,14 @@ public class GameInput : MonoBehaviour
         mPlayerInputActions.Player.InteractAlternate.performed += InteractAlternate_performed;
         mPlayerInputActions.Player.Pause.performed += Pause_performed;
     }
+    private void OnDestroy()
+    {
+        mPlayerInputActions.Player.Interact.performed -= Interact_performed;
+        mPlayerInputActions.Player.InteractAlternate.performed -= InteractAlternate_performed;
+        mPlayerInputActions.Player.Pause.performed -= Pause_performed;
+
+        mPlayerInputActions.Dispose();
+    }
 
     private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {

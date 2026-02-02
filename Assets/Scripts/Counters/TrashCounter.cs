@@ -14,6 +14,10 @@ public class TrashCounter : BaseCounter
             mOnTrashInteract?.Invoke(this, EventArgs.Empty);
         }
     }
+    public static new void resetStaticData()
+    {
+        mOnTrashInteract = null;
+    }
 
     public static event EventHandler mOnTrashInteract;
 }
