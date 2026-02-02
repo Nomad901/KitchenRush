@@ -7,6 +7,8 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         mInstance = this;
+
+        mVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME_STRING, 1.0f);
     }
     private void Start()
     {
@@ -66,7 +68,10 @@ public class SoundManager : MonoBehaviour
     {
         mVolume += 0.1f;
         if(mVolume > 1.0f)
-            mVolume = 0.0f;   
+            mVolume = 0.0f;
+
+        PlayerPrefs.SetFloat(SOUND_EFFECTS_VOLUME_STRING, mVolume);
+        PlayerPrefs.Save();
     }
     public float getVolume()
     {
@@ -77,6 +82,8 @@ public class SoundManager : MonoBehaviour
     private AudioClipRefSO mAudioClipRefSO;
 
     private float mVolume = 1.0f;
+
+    private const string SOUND_EFFECTS_VOLUME_STRING = "SoundEffectsVolume";
 
     public static SoundManager mInstance { get; private set; }
 }

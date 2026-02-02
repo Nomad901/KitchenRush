@@ -13,6 +13,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             Loader.loadScene(Loader.Scenes.GameMenuScene);
         });
+        mSettingsButton.onClick.AddListener(() =>
+        {
+            SettingsPauseUI.mInstance.show();
+        });
     }
     private void Start()
     {
