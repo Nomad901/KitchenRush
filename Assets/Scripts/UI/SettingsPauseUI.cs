@@ -23,6 +23,10 @@ public class SettingsPauseUI : MonoBehaviour
         {
             hide();
         });
+        mMoveUpButton.onClick.AddListener(() =>
+        {
+            GameInput.mInstance.rebindKey(GameInput.KeyBindings.MOVE_UP);
+        });
     }
     private void Start()
     {
@@ -30,6 +34,7 @@ public class SettingsPauseUI : MonoBehaviour
      
         updateVisuals();
         hide();
+        hideRebindKeyWindow();
     }
     private void GameHandler_mOnGameUnPaused(object sender, EventArgs e)
     {
@@ -39,6 +44,14 @@ public class SettingsPauseUI : MonoBehaviour
     {
         mSoundsEffectText.text = "Sound effects: " + MathF.Round(SoundManager.mInstance.getVolume() * 10.0f);
         mMusicText.text = "Music: " + Mathf.Round(MusicManager.mInstance.getVolume() * 10.0f);
+
+        mMoveUpText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.MOVE_UP);
+        mMoveDownText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.MOVE_DOWN);
+        mMoveRightText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.MOVE_RIGHT);
+        mMoveLeftText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.MOVE_LEFT);
+        mInteractText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.INTERACT);
+        mInteractAltText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.INTERACT_ALT);
+        mPauseText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.PAUSE);
     }
     public void show()
     {
@@ -47,6 +60,14 @@ public class SettingsPauseUI : MonoBehaviour
     public void hide()
     {
         gameObject.SetActive(false);
+    }
+    public void showRebindKeyWindow()
+    {
+        mWindowToRebindKey.gameObject.SetActive(true);
+    }
+    public void hideRebindKeyWindow()
+    {
+        mWindowToRebindKey.gameObject.SetActive(false);
     }
 
     [SerializeField]
@@ -88,6 +109,9 @@ public class SettingsPauseUI : MonoBehaviour
     private TextMeshProUGUI mInteractAltText;
     [SerializeField]
     private TextMeshProUGUI mPauseText;
+
+    [SerializeField]
+    private Transform mWindowToRebindKey;
 
     public static SettingsPauseUI mInstance { get; private set; }
 }
