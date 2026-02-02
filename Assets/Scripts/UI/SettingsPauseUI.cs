@@ -55,11 +55,39 @@ public class SettingsPauseUI : MonoBehaviour
     private Button mMusicButton;
     [SerializeField]
     private Button mCloseButton;
+    [SerializeField]
+    private Button mMoveUpButton;
+    [SerializeField]
+    private Button mMoveDownButton;
+    [SerializeField]
+    private Button mMoveRightButton;
+    [SerializeField]
+    private Button mMoveLeftButton;
+    [SerializeField]
+    private Button mInteractButton;
+    [SerializeField]
+    private Button mInteractAltButton;
+    [SerializeField]
+    private Button mPauseButton;
 
     [SerializeField]
     private TextMeshProUGUI mSoundsEffectText;
     [SerializeField]
     private TextMeshProUGUI mMusicText;
+    [SerializeField]
+    private TextMeshProUGUI mMoveUpText;
+    [SerializeField]
+    private TextMeshProUGUI mMoveDownText;
+    [SerializeField]
+    private TextMeshProUGUI mMoveRightText;
+    [SerializeField]
+    private TextMeshProUGUI mMoveLeftText;
+    [SerializeField]
+    private TextMeshProUGUI mInteractText;
+    [SerializeField]
+    private TextMeshProUGUI mInteractAltText;
+    [SerializeField]
+    private TextMeshProUGUI mPauseText;
 
     public static SettingsPauseUI mInstance { get; private set; }
 }
