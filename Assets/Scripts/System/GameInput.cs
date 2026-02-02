@@ -71,17 +71,16 @@ public class GameInput : MonoBehaviour
 
         return "";
     }
-    public void rebindKey(KeyBindings pKeyBinding)
+    public void rebindKey(KeyBindings pKeyBinding, Action pOnActionRebound)
     {
         mPlayerInputActions.Player.Disable();
 
         mPlayerInputActions.Player.Move.PerformInteractiveRebinding(1)
             .OnComplete(callback =>
             {
-                Debug.Log(callback.action.bindings[1].path);
-                Debug.Log(callback.action.bindings[1].overridePath);
                 callback.Dispose();
                 mPlayerInputActions.Player.Enable();
+                pOnActionRebound();
             })
             .Start();
     }

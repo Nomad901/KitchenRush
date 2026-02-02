@@ -25,7 +25,7 @@ public class SettingsPauseUI : MonoBehaviour
         });
         mMoveUpButton.onClick.AddListener(() =>
         {
-            GameInput.mInstance.rebindKey(GameInput.KeyBindings.MOVE_UP);
+            rebindBinding(GameInput.KeyBindings.MOVE_UP);
         });
     }
     private void Start()
@@ -69,7 +69,15 @@ public class SettingsPauseUI : MonoBehaviour
     {
         mWindowToRebindKey.gameObject.SetActive(false);
     }
-
+    private void rebindBinding(GameInput.KeyBindings pKeyBinding)
+    {
+        showRebindKeyWindow();
+        GameInput.mInstance.rebindKey(pKeyBinding, () =>
+            {
+                hideRebindKeyWindow();
+                updateVisuals();
+            });
+    }
     [SerializeField]
     private Button mSoundsEffectButtons;
     [SerializeField]
