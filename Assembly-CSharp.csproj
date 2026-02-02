@@ -81,12 +81,14 @@
     <Compile Include="Assets\Scripts\Counters\PlateCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
     <Compile Include="Assets\Scripts\DeliveryManagerMaxOrdersUI.cs" />
+    <Compile Include="Assets\Scripts\UI\SettingsPauseUI.cs" />
     <Compile Include="Assets\Scripts\UI\DeliveryManagerUI_Single.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\PlatesCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Recipies\RecipeListSO.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\SelectedCounterVisual.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
+    <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\Utils\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\UI\GamePauseUI.cs" />

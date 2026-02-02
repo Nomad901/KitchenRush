@@ -54,17 +54,29 @@ public class SoundManager : MonoBehaviour
         Int32 randomIndex = UnityEngine.Random.Range(0, pAudioClipArray.Length);
         playSound(pAudioClipArray[randomIndex], pPosOfAudio, pVolume);
     }
-    private void playSound(AudioClip pAudioClip, Vector3 pPosOfAudio, float pVolume = 1.0f)
+    private void playSound(AudioClip pAudioClip, Vector3 pPosOfAudio, float pVolumeMultiplier = 1.0f)
     {
-        AudioSource.PlayClipAtPoint(pAudioClip, pPosOfAudio, pVolume);
+        AudioSource.PlayClipAtPoint(pAudioClip, pPosOfAudio, mVolume * pVolumeMultiplier);
     }
     public void playFootStepAudio(Vector3 pPos, float pVolume)
     {
         playSound(mAudioClipRefSO.mFootstep, pPos, pVolume);
     }
+    public void changeVolume()
+    {
+        mVolume += 0.1f;
+        if(mVolume > 1.0f)
+            mVolume = 0.0f;   
+    }
+    public float getVolume()
+    {
+        return mVolume;
+    }
 
     [SerializeField]
     private AudioClipRefSO mAudioClipRefSO;
+
+    private float mVolume = 1.0f;
 
     public static SoundManager mInstance { get; private set; }
 }

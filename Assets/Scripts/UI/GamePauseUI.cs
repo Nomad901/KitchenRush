@@ -44,5 +44,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField]
     private Button mResumeButton;
     [SerializeField]
+    private Button mSettingsButton;
+    [SerializeField]
     private Button mMenuButton;
 }
