@@ -23,9 +23,34 @@ public class SettingsPauseUI : MonoBehaviour
         {
             hide();
         });
+
         mMoveUpButton.onClick.AddListener(() =>
         {
             rebindBinding(GameInput.KeyBindings.MOVE_UP);
+        });
+        mMoveDownButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.MOVE_DOWN);
+        });
+        mMoveRightButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.MOVE_RIGHT);
+        });
+        mMoveLeftButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.MOVE_LEFT);
+        });
+        mInteractButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.INTERACT);
+        });
+        mInteractAltButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.INTERACT_ALT);
+        });
+        mPauseButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.PAUSE);
         });
     }
     private void Start()

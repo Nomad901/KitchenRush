@@ -75,12 +75,50 @@ public class GameInput : MonoBehaviour
     {
         mPlayerInputActions.Player.Disable();
 
-        mPlayerInputActions.Player.Move.PerformInteractiveRebinding(1)
+        InputAction inputAction = mPlayerInputActions.Player.Move;
+        Int32 bindingIndex = 0;
+
+        switch (pKeyBinding)
+        {
+            case KeyBindings.MOVE_UP:
+                inputAction = mPlayerInputActions.Player.Move;
+                bindingIndex = 1;
+                break;
+            case KeyBindings.MOVE_DOWN:
+                inputAction = mPlayerInputActions.Player.Move;
+                bindingIndex = 2;
+                break;
+            case KeyBindings.MOVE_LEFT:
+                inputAction = mPlayerInputActions.Player.Move;
+                bindingIndex = 3;
+                break;
+            case KeyBindings.MOVE_RIGHT:
+                inputAction = mPlayerInputActions.Player.Move;
+                bindingIndex = 4;
+                break;
+            case KeyBindings.INTERACT:
+                inputAction = mPlayerInputActions.Player.Interact;
+                bindingIndex = 0;
+                break;
+            case KeyBindings.INTERACT_ALT:
+                inputAction = mPlayerInputActions.Player.InteractAlternate;
+                bindingIndex = 0;
+                break;
+            case KeyBindings.PAUSE:
+                inputAction = mPlayerInputActions.Player.Pause;
+                bindingIndex = 0;
+                break;
+        }
+
+        inputAction.PerformInteractiveRebinding(bindingIndex)
             .OnComplete(callback =>
             {
                 callback.Dispose();
                 mPlayerInputActions.Player.Enable();
                 pOnActionRebound();
+
+                PlayerPrefs.SetString(PLAYER_PREFS_BINDINGS, mPlayerInputActions.SaveBindingOverridesAsJson());
+                PlayerPrefs.Save();
             })
             .Start();
     }
@@ -103,5 +141,6 @@ public class GameInput : MonoBehaviour
         INTERACT_ALT = 5,
         PAUSE = 6
     };
+    private const string PLAYER_PREFS_BINDINGS = "InputBindings";
     public static GameInput mInstance { get; private set; }
 }
