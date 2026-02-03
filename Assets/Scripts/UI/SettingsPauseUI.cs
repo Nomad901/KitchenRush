@@ -52,6 +52,18 @@ public class SettingsPauseUI : MonoBehaviour
         {
             rebindBinding(GameInput.KeyBindings.PAUSE);
         });
+        mGamepadInteractButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.GAMEPAD_INTERACT);
+        });
+        mGamepadInteractAltButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.GAMEPAD_INTERACT_ALT);
+        });
+        mGamepadPauseButton.onClick.AddListener(() =>
+        {
+            rebindBinding(GameInput.KeyBindings.GAMEPAD_PAUSE);
+        });
     }
     private void Start()
     {
@@ -77,6 +89,10 @@ public class SettingsPauseUI : MonoBehaviour
         mInteractText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.INTERACT);
         mInteractAltText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.INTERACT_ALT);
         mPauseText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.PAUSE);
+        mGamepadInteractText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_INTERACT);
+        mGamepadInteractAltText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_INTERACT_ALT);
+        mGamepadPauseText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_PAUSE);
+
     }
     public void show()
     {
@@ -123,6 +139,12 @@ public class SettingsPauseUI : MonoBehaviour
     private Button mInteractAltButton;
     [SerializeField]
     private Button mPauseButton;
+    [SerializeField]
+    private Button mGamepadInteractButton;
+    [SerializeField]
+    private Button mGamepadInteractAltButton;
+    [SerializeField]
+    private Button mGamepadPauseButton;
 
     [SerializeField]
     private TextMeshProUGUI mSoundsEffectText;
@@ -142,6 +164,12 @@ public class SettingsPauseUI : MonoBehaviour
     private TextMeshProUGUI mInteractAltText;
     [SerializeField]
     private TextMeshProUGUI mPauseText;
+    [SerializeField]
+    private TextMeshProUGUI mGamepadInteractText;
+    [SerializeField]
+    private TextMeshProUGUI mGamepadInteractAltText;
+    [SerializeField]
+    private TextMeshProUGUI mGamepadPauseText;
 
     [SerializeField]
     private Transform mWindowToRebindKey;

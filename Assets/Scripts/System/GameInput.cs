@@ -71,6 +71,12 @@ public class GameInput : MonoBehaviour
                 return mPlayerInputActions.Player.InteractAlternate.bindings[0].ToDisplayString();
             case KeyBindings.PAUSE:
                 return mPlayerInputActions.Player.Pause.bindings[0].ToDisplayString();
+            case KeyBindings.GAMEPAD_INTERACT:
+                return mPlayerInputActions.Player.Interact.bindings[1].ToDisplayString();
+            case KeyBindings.GAMEPAD_INTERACT_ALT:
+                return mPlayerInputActions.Player.InteractAlternate.bindings[1].ToDisplayString();
+            case KeyBindings.GAMEPAD_PAUSE:
+                return mPlayerInputActions.Player.Pause.bindings[1].ToDisplayString();
         }
 
         return "";
@@ -112,6 +118,18 @@ public class GameInput : MonoBehaviour
                 inputAction = mPlayerInputActions.Player.Pause;
                 bindingIndex = 0;
                 break;
+            case KeyBindings.GAMEPAD_INTERACT:
+                inputAction = mPlayerInputActions.Player.Interact;
+                bindingIndex = 1;
+                break;
+            case KeyBindings.GAMEPAD_INTERACT_ALT:
+                inputAction = mPlayerInputActions.Player.InteractAlternate;
+                bindingIndex = 1;
+                break;
+            case KeyBindings.GAMEPAD_PAUSE:
+                inputAction = mPlayerInputActions.Player.Pause;
+                bindingIndex = 1;
+                break;
         }
 
         inputAction.PerformInteractiveRebinding(bindingIndex)
@@ -143,7 +161,11 @@ public class GameInput : MonoBehaviour
         MOVE_RIGHT = 3,
         INTERACT = 4,
         INTERACT_ALT = 5,
-        PAUSE = 6
+        PAUSE = 6,
+
+        GAMEPAD_INTERACT = 7,
+        GAMEPAD_INTERACT_ALT = 8,
+        GAMEPAD_PAUSE = 9
     };
     private const string PLAYER_PREFS_BINDINGS = "InputBindings";
     public static GameInput mInstance { get; private set; }
