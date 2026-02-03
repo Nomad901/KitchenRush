@@ -10,6 +10,10 @@ public class GameInput : MonoBehaviour
         mInstance = this;
 
         mPlayerInputActions = new PlayerInputActions();
+
+        if (PlayerPrefs.HasKey(PLAYER_PREFS_BINDINGS))
+            mPlayerInputActions.LoadBindingOverridesFromJson(PlayerPrefs.GetString(PLAYER_PREFS_BINDINGS));
+
         mPlayerInputActions.Player.Enable();
 
         mPlayerInputActions.Player.Interact.performed += Interact_performed;
