@@ -22,6 +22,7 @@ public class SettingsPauseUI : MonoBehaviour
         mCloseButton.onClick.AddListener(() =>
         {
             hide();
+            mOnCloseAction();
         });
 
         mMoveUpButton.onClick.AddListener(() =>
@@ -94,9 +95,13 @@ public class SettingsPauseUI : MonoBehaviour
         mGamepadPauseText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_PAUSE);
 
     }
-    public void show()
+    public void show(Action pOnCloseAction)
     {
+        mOnCloseAction = pOnCloseAction;
+
         gameObject.SetActive(true);
+
+        mSoundsEffectButtons.Select();
     }
     public void hide()
     {
@@ -174,5 +179,6 @@ public class SettingsPauseUI : MonoBehaviour
     [SerializeField]
     private Transform mWindowToRebindKey;
 
+    private Action mOnCloseAction;
     public static SettingsPauseUI mInstance { get; private set; }
 }

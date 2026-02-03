@@ -15,7 +15,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         });
         mSettingsButton.onClick.AddListener(() =>
         {
-            SettingsPauseUI.mInstance.show();
+            hide();
+            SettingsPauseUI.mInstance.show(show);
         });
     }
     private void Start()
@@ -39,6 +40,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private void show()
     {
         gameObject.SetActive(true);
+
+        mResumeButton.Select();
     }
     private void hide()
     {
