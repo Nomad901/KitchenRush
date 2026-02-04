@@ -141,6 +141,8 @@ public class GameInput : MonoBehaviour
 
                 PlayerPrefs.SetString(PLAYER_PREFS_BINDINGS, mPlayerInputActions.SaveBindingOverridesAsJson());
                 PlayerPrefs.Save();
+
+                mOnKeyRebinding?.Invoke(this, EventArgs.Empty);
             })
             .Start();
     }
@@ -153,6 +155,8 @@ public class GameInput : MonoBehaviour
     public event EventHandler mOnInteract;
     public event EventHandler mOnInteractAlternate;
     public event EventHandler mOnPauseAction;
+    public event EventHandler mOnKeyRebinding;
+
     public enum KeyBindings
     { 
         MOVE_UP = 0,

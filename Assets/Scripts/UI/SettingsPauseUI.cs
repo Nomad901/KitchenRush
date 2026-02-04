@@ -93,7 +93,6 @@ public class SettingsPauseUI : MonoBehaviour
         mGamepadInteractText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_INTERACT);
         mGamepadInteractAltText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_INTERACT_ALT);
         mGamepadPauseText.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_PAUSE);
-
     }
     public void show(Action pOnCloseAction)
     {
