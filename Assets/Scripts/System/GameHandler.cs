@@ -11,6 +11,16 @@ public class GameHandler : MonoBehaviour
     private void Start()
     {
         GameInput.mInstance.mOnPauseAction += MInstance_mOnPauseAction;
+        GameInput.mInstance.mOnInteract += GameInput_mOnInteract;
+    }
+
+    private void GameInput_mOnInteract(object sender, EventArgs e)
+    {
+        if(mCurrentState == State.WAITING_TO_START)
+        {
+            mCurrentState = State.COUNT_DOWN_TO_START;
+            mOnStateChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void MInstance_mOnPauseAction(object sender, EventArgs e)
@@ -23,18 +33,6 @@ public class GameHandler : MonoBehaviour
         switch(mCurrentState)
         {
             case State.WAITING_TO_START:
-                if(mFirstTime)
-                {
-                    mOnStateChanged?.Invoke(this, EventArgs.Empty);
-                    mFirstTime = false;
-                }
-
-                mWaitingToStartTimer -= Time.deltaTime;
-                if (mWaitingToStartTimer < 0.0f)
-                {
-                    mCurrentState = State.COUNT_DOWN_TO_START;
-                    mOnStateChanged?.Invoke(this, EventArgs.Empty);
-                }
                 break;
             case State.COUNT_DOWN_TO_START:
                 mCountDownToStartTimer -= Time.deltaTime;
@@ -106,7 +104,6 @@ public class GameHandler : MonoBehaviour
     }
     private State mCurrentState;
 
-    private float mWaitingToStartTimer = 1.0f;
     private float mCountDownToStartTimer = 3.0f;
     private float mGamePlayingTimer;
     private bool mFirstTime = true;

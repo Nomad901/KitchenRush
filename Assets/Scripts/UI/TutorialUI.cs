@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
@@ -6,7 +7,16 @@ public class TutorialUI : MonoBehaviour
     private void Start()
     {
         GameInput.mInstance.mOnKeyRebinding += GameInput_mOnKeyRebinding;
+        GameHandler.mInstance.mOnStateChanged += GameHandler_mOnStateChanged;
         updateVisuals();
+
+        show();
+    }
+
+    private void GameHandler_mOnStateChanged(object sender, System.EventArgs e)
+    {
+        if (GameHandler.mInstance.isCountDownToStartActive())
+            hide();
     }
 
     private void GameInput_mOnKeyRebinding(object sender, System.EventArgs e)
@@ -27,6 +37,15 @@ public class TutorialUI : MonoBehaviour
         mGamepadInteract.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_INTERACT);
         mGamepadInteractAlt.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_INTERACT_ALT);
         mGamepadPause.text = GameInput.mInstance.getBindingKeyText(GameInput.KeyBindings.GAMEPAD_PAUSE);
+    }
+
+    private void show()
+    {
+        gameObject.SetActive(true);
+    }
+    private void hide()
+    {
+        gameObject.SetActive(false);
     }
 
     [SerializeField]

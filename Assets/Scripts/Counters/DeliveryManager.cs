@@ -19,7 +19,8 @@ public class DeliveryManager : MonoBehaviour
     private void Update()
     {
         mTimerOfOrder -= Time.deltaTime;
-        if (mTimerOfOrder <= 0.0f &&
+        if (GameHandler.mInstance.gameIsPlaying() &&
+            mTimerOfOrder <= 0.0f                 &&
             mWaitingRecipeSOList.Count < GameSettings.mWaitingRecipesMax)
         {
             mTimerOfOrder = GameSettings.mTimerOfNextOrder;

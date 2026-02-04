@@ -11,7 +11,8 @@ public class PlateCounter : BaseCounter
     private void Update()
     {
         mCurrentTime += Time.deltaTime;
-        if (mCurrentTime >= TIME_OF_APPEARING &&
+        if (GameHandler.mInstance.gameIsPlaying() &&
+            mCurrentTime >= TIME_OF_APPEARING     &&
             mCurrentAmountOfPlates < MAX_AMOUNT_OF_PLATES)
         {
             mCurrentTime = 0.0f;
