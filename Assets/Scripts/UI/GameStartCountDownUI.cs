@@ -1,9 +1,14 @@
 using System;
+using System.Net.Mail;
 using TMPro;
 using UnityEngine;
 
 public class GameStartCountDownUI : MonoBehaviour
 {
+    private void Awake()
+    {
+        mAnimator = GetComponent<Animator>();
+    }
     private void Start()
     {
         GameHandler.mInstance.mOnStateChanged += GameHandler_mOnStateChanged;
@@ -18,7 +23,15 @@ public class GameStartCountDownUI : MonoBehaviour
     }
     private void Update()
     {
-        mCountDownText.text = MathF.Ceiling(GameHandler.mInstance.getCountDownTimer()).ToString();
+        Int32 countDownInt = Mathf.CeilToInt(GameHandler.mInstance.getCountDownTimer());
+        mCountDownText.text = countDownInt.ToString();
+
+        if(mPreviousNumber != countDownInt)
+        {
+            mPreviousNumber = countDownInt;
+            mAnimator.SetTrigger(ANIMATOR_TRIGGER_STRING);
+            SoundManager.mInstance.playCountDownAudio();
+        }
     }
 
     private void show()
@@ -32,4 +45,8 @@ public class GameStartCountDownUI : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI mCountDownText;
+
+    private const string ANIMATOR_TRIGGER_STRING = "NumberPopUp";
+    private Animator mAnimator;
+    private Int32 mPreviousNumber = 0;
 }

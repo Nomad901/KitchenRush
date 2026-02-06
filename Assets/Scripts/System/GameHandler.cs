@@ -106,7 +106,6 @@ public class GameHandler : MonoBehaviour
 
     private float mCountDownToStartTimer = 3.0f;
     private float mGamePlayingTimer;
-    private bool mFirstTime = true;
     private bool mIsGamePaused = false;
     public static GameHandler mInstance { get; private set; }
     

@@ -160,6 +160,11 @@ public class StoveCounter : BaseCounter, IHasProgress
         return null;
     }
 
+    public bool isFried()
+    {
+        return mFryingState == fryingState.FRIED;
+    }
+
     [SerializeField]
     private FryingRecipeSO[] mFryingRecipeSOArray;
     [SerializeField]
