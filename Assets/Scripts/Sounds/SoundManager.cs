@@ -68,6 +68,10 @@ public class SoundManager : MonoBehaviour
     {
         playSound(mAudioClipRefSO.mWarning, Vector3.zero);
     }
+    public void playWarningBurnAudio(Vector3 pPosition)
+    {
+        playSound(mAudioClipRefSO.mWarning, pPosition);
+    }
     public void changeVolume()
     {
         mVolume += 0.1f;

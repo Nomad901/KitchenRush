@@ -4925,6 +4925,8 @@ GameObject:
   - component: {fileID: 654684613686635578}
   - component: {fileID: 4390699150952577048}
   - component: {fileID: 7868214076223623983}
+  - component: {fileID: 4499353871403939992}
+  - component: {fileID: 1545624589895654474}
   m_Layer: 5
   m_Name: MeatBurningWarningUI
   m_TagString: Untagged
@@ -5041,6 +5043,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeatBurningWarningUI
   mStoveCounter: {fileID: 8819135353506166720}
+--- !u!95 &4499353871403939992
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434800886942191179}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 724b5352ece2c104c96ba5f68eace050, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &1545624589895654474
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434800886942191179}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4414381314637868445
 GameObject:
   m_ObjectHideFlags: 0
