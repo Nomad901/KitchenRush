@@ -11,7 +11,6 @@ public class StoveCounter : BaseCounter, IHasProgress
         mBurningTimer = 0.0f;
         mFryingState = fryingState.IDLE;
     }
-
     private void Update()
     {
         if(hasKitchenObject())
@@ -70,6 +69,7 @@ public class StoveCounter : BaseCounter, IHasProgress
 
                     getKitchenObject().destroySelf();
                     KitchenObject.spawnKitchenObject(mBurningRecipeSO.mOutput, this);
+                    mFryingState = fryingState.IDLE;
                     break;
             }
         }
