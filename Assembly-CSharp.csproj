@@ -52,11 +52,11 @@
     <Compile Include="Assets\Scripts\UI\DeliveryManagerMaxOrdersUI.cs" />
     <Compile Include="Assets\Scripts\System\GameSettings.cs" />
     <Compile Include="Assets\Scripts\UI\ReadyTextUI.cs" />
-    <Compile Include="Assets\Scripts\MeatBurningWarningUI.cs" />
     <Compile Include="Assets\Scripts\UI\DeliveryManagerTimeOfNextOrderUI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\Recipies\RecipeSO.cs" />
     <Compile Include="Assets\Scripts\Utils\IHasProgress.cs" />
+    <Compile Include="Assets\Scripts\UI\StoveCounterFlashingBarUi.cs" />
     <Compile Include="Assets\Scripts\CounterVisuals\StoveCounterVisual.cs" />
     <Compile Include="Assets\Scripts\System\LoaderCallBack.cs" />
     <Compile Include="Assets\Scripts\Utils\ResetStaticDataManager.cs" />
@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Sounds\MusicManager.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayingClockUI.cs" />
     <Compile Include="Assets\Scripts\System\Loader.cs" />
+    <Compile Include="Assets\Scripts\UI\MeatBurningWarningUI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\GameStartCountDownUI.cs" />
     <Compile Include="Assets\Scripts\Counters\ContainerCounter.cs" />

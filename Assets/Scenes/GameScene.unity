@@ -8701,7 +8701,6 @@ GameObject:
   - component: {fileID: 962026888}
   - component: {fileID: 962026890}
   - component: {fileID: 962026889}
-  - component: {fileID: 962026892}
   - component: {fileID: 962026891}
   m_Layer: 5
   m_Name: CountDownText
@@ -8842,28 +8841,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!95 &962026892
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962026887}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1cffaeeaaab6b864c8b6c88c80c55ece, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &996270369
 GameObject:
   m_ObjectHideFlags: 0
@@ -18149,6 +18126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085875167}
   - component: {fileID: 2085875168}
+  - component: {fileID: 2085875169}
   m_Layer: 5
   m_Name: GameStartCountDownUI
   m_TagString: Untagged
@@ -18189,6 +18167,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStartCountDownUI
   mCountDownText: {fileID: 962026889}
+--- !u!95 &2085875169
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085875166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1cffaeeaaab6b864c8b6c88c80c55ece, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2094297674
 GameObject:
   m_ObjectHideFlags: 0
