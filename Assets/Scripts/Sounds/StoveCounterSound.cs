@@ -34,7 +34,7 @@ public class StoveCounterSound : MonoBehaviour
     {
         bool playSound = e.mState == StoveCounter.fryingState.FRYING ||
                          e.mState == StoveCounter.fryingState.FRIED;
-        if (playSound)
+        if (playSound && SoundManager.mInstance.getVolume() != 0.0f)
             mAudioSource.Play();
         else
             mAudioSource.Pause();

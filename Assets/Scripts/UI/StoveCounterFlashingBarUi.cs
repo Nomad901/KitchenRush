@@ -16,7 +16,7 @@ public class StoveCounterFlashingBarUi : MonoBehaviour
     {
         float burntWarningProgressOn = 0.5f;
         bool showCond = mStoveCounter.isFried() && e.mProgressFloat >= burntWarningProgressOn;
-
+       
         mAnimator.SetBool(IS_FLASHING, showCond);
     }
 

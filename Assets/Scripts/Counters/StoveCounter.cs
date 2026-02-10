@@ -13,72 +13,65 @@ public class StoveCounter : BaseCounter, IHasProgress
     }
     private void Update()
     {
-        if(hasKitchenObject())
+        switch (mFryingState)
         {
-            switch (mFryingState)
-            {
-                case fryingState.IDLE:
+            case fryingState.IDLE:
+                mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                {
+                    mProgressFloat = 0.0f
+                });
+                break;
+            case fryingState.FRYING:
+                mFryingTimer += Time.deltaTime;
 
-                    break;
-                case fryingState.FRYING:
-                    mFryingTimer += Time.deltaTime;
+                mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                {
+                    mProgressFloat = (mFryingTimer / mFryingRecipeSO.mFryingTimerMax)
+                });
 
-                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
-                    {
-                        mProgressFloat = (mFryingTimer / mFryingRecipeSO.mFryingTimerMax)
-                    });
-
-                    if (mFryingTimer >= mFryingRecipeSO.mFryingTimerMax)
-                    {
-                        mFryingTimer = 0.0f;
-                        
-                        getKitchenObject().destroySelf();
-                        KitchenObject.spawnKitchenObject(mFryingRecipeSO.mOutput, this);
-
-                        mFryingState = fryingState.FRIED;
-                        mOnStateChange?.Invoke(this, new OnStateChangeArgs
-                        {
-                            mState = fryingState.FRIED
-                        });
-                    }
-                    break;
-                case fryingState.FRIED:
-                    mBurningTimer += Time.deltaTime;
-
-                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
-                    {
-                        mProgressFloat = (mBurningTimer / mBurningRecipeSO.mBurningTimerMax)
-                    });
-
-                    if (mBurningTimer >= mBurningRecipeSO.mBurningTimerMax)
-                    {
-                        mFryingState = fryingState.BURNED;
-                        mOnStateChange?.Invoke(this, new OnStateChangeArgs
-                        {
-                            mState = fryingState.BURNED
-                        });
-                    }
-                    break;
-                case fryingState.BURNED:
-                    mBurningTimer = 0.0f;
-
-                    mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
-                    {
-                        mProgressFloat = 0.0f
-                    });
-
+                if (mFryingTimer >= mFryingRecipeSO.mFryingTimerMax)
+                {
+                    mFryingTimer = 0.0f;
+                    
                     getKitchenObject().destroySelf();
-                    KitchenObject.spawnKitchenObject(mBurningRecipeSO.mOutput, this);
-                    mFryingState = fryingState.IDLE;
-                    break;
-            }
-        }
-        else
-        {
-            mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
-            {
-                mProgressFloat = 0.0f
-            });
+                    KitchenObject.spawnKitchenObject(mFryingRecipeSO.mOutput, this);
+
+                    mFryingState = fryingState.FRIED;
+                    mOnStateChange?.Invoke(this, new OnStateChangeArgs
+                    {
+                        mState = fryingState.FRIED
+                    });
+                }
+                break;
+            case fryingState.FRIED:
+                mBurningTimer += Time.deltaTime;
+
+                mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                {
+                    mProgressFloat = (mBurningTimer / mBurningRecipeSO.mBurningTimerMax)
+                });
+
+                if (mBurningTimer >= mBurningRecipeSO.mBurningTimerMax)
+                {
+                    mFryingState = fryingState.BURNED;
+                    mOnStateChange?.Invoke(this, new OnStateChangeArgs
+                    {
+                        mState = fryingState.BURNED
+                    });
+                }
+                break;
+            case fryingState.BURNED:
+                mBurningTimer = 0.0f;
+
+                mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                {
+                    mProgressFloat = 0.0f
+                });
+
+                getKitchenObject().destroySelf();
+                KitchenObject.spawnKitchenObject(mBurningRecipeSO.mOutput, this);
+                mFryingState = fryingState.IDLE;
+                break;
         }
     }
 
@@ -159,10 +152,13 @@ public class StoveCounter : BaseCounter, IHasProgress
         }
         return null;
     }
-
     public bool isFried()
     {
         return mFryingState == fryingState.FRIED;
+    }
+    public bool isIdle()
+    {
+        return mFryingState == fryingState.IDLE;
     }
 
     [SerializeField]
