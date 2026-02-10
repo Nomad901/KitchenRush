@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 using static CutCounter;
@@ -10,6 +11,10 @@ public class StoveCounter : BaseCounter, IHasProgress
         mFryingTimer = 0.0f;
         mBurningTimer = 0.0f;
         mFryingState = fryingState.IDLE;
+        mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+        {
+            mProgressFloat = 0.0f
+        });
     }
     private void Update()
     {
@@ -61,16 +66,16 @@ public class StoveCounter : BaseCounter, IHasProgress
                 }
                 break;
             case fryingState.BURNED:
-                mBurningTimer = 0.0f;
+                mBurningTimer = 0.0f;              
+                getKitchenObject().destroySelf();
+                KitchenObject.spawnKitchenObject(mBurningRecipeSO.mOutput, this);
+                mFryingState = fryingState.IDLE;
 
                 mOnBarChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
                 {
                     mProgressFloat = 0.0f
                 });
 
-                getKitchenObject().destroySelf();
-                KitchenObject.spawnKitchenObject(mBurningRecipeSO.mOutput, this);
-                mFryingState = fryingState.IDLE;
                 break;
         }
     }

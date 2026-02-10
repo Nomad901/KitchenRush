@@ -502,7 +502,6 @@
 "Assets/Scripts/UI/ReadyTextUI.cs"
 "Assets/Scripts/UI/SettingsPauseUI.cs"
 "Assets/Scripts/UI/SettingsUI.cs"
-"Assets/Scripts/UI/StoveCounterFlashingBarUi.cs"
 "Assets/Scripts/UI/TutorialUI.cs"
 "Assets/Scripts/Utils/IHasProgress.cs"
 "Assets/Scripts/Utils/LookAtCamera.cs"
