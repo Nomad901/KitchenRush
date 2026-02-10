@@ -490,6 +490,7 @@
 "Assets/Scripts/UI/DeliveryManagerTimeOfNextOrderUI.cs"
 "Assets/Scripts/UI/DeliveryManagerUI.cs"
 "Assets/Scripts/UI/DeliveryManagerUI_Single.cs"
+"Assets/Scripts/UI/DeliveryResultUI.cs"
 "Assets/Scripts/UI/GameOverUI.cs"
 "Assets/Scripts/UI/GamePauseUI.cs"
 "Assets/Scripts/UI/GamePlayingClockUI.cs"
